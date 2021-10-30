@@ -24,12 +24,14 @@ const getRawProducts = async () => {
         const url = node.getAttribute('href');
         // header
         const header = node.querySelector('.product-card__header > div.product-card__header-text');
-        const name = header.children.item(0).textContent;
-        const tagline = header.children.item(1).textContent;
+        if (!header) throw new Error('header was null');
+        const name = header.children.item(0)?.textContent;
+        const tagline = header.children.item(1)?.textContent;
         // revenue
-        const revenueEls = node.querySelector('.product-card__revenue > div.product-card__revenue-text').children;
-        const revenueNumber = revenueEls.item(0).textContent.trim();
-        const revenueExplanation = revenueEls.item(1).textContent.trim();
+        const revenueEls = node.querySelector('.product-card__revenue > div.product-card__revenue-text')?.children;
+        if (!revenueEls) throw new Error('revenueEls was null');
+        const revenueNumber = revenueEls.item(0)?.textContent?.trim();
+        const revenueExplanation = revenueEls.item(1)?.textContent?.trim();
 
         productCards[i] = { url, name, tagline, revenueNumber, revenueExplanation };
       }
@@ -60,7 +62,9 @@ const parseRevenueExplanation = (val: string) => {
 };
 
 const parseMonthlyRevenue = (val: string) => {
-  const result = parseInt(val.match(/\d+/)[0]);
+  const revenue = val.match(/\d+/);
+  if (!revenue) throw new Error(`Invalid revenueNumber arg: ${val}`);
+  const result = parseInt(revenue[0]);
   if (Number.isInteger(result)) return result;
   throw new Error(`invalid revenueNumber ${val}`);
 };
