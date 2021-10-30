@@ -1,13 +1,15 @@
 import axios from 'axios';
 import { logger } from '@utils/logger';
 
-const PAGE_URL = 'https://www.indiehackers.com/products';
+class Scraper {
+  public url = 'https://www.indiehackers.com/products';
 
-const scraper = async () => {
-  const response = await axios.get(PAGE_URL);
+  public async init() {
+    const response = await axios.get(this.url);
 
-  logger.info('👌 Scraped page data: ');
-  logger.info(response.data);
-};
+    logger.info('👌 Scraped page data: ');
+    logger.info(response.data);
+  }
+}
 
-export default scraper;
+export default Scraper;
