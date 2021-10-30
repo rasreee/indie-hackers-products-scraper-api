@@ -1,4 +1,3 @@
-import { HttpException } from '@exceptions/HttpException';
 import { Product } from '@interfaces/products.interface';
 import productModel from '@models/products.model';
 
@@ -11,7 +10,7 @@ class ProductService {
     return this.products;
   }
 
-  public async findProductById(productId: number): Promise<Product> {
+  public async findProductById(productId: string): Promise<Product> {
     // const findProduct: Product = this.products.find(product => product.id === productId);
     // if (!findProduct) throw new HttpException(409, "You're not product");
     // return findProduct;
