@@ -82,6 +82,7 @@ class Scraper {
     const rawProducts = await getRawProducts();
 
     const productsData = parseProductsData(rawProducts);
+
     fs.writeFile('products.json', JSON.stringify(productsData), err => {
       if (err) throw err;
       console.log('✅ Success!');
