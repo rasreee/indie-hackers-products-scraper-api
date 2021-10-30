@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import { RevenueExplanation } from './interfaces/products.interface';
+import path from 'path';
 
 const productsUrl = 'https://indiehackers.com/products';
 
@@ -19,14 +20,12 @@ const getRawProducts = async () => {
       const productCards: any[] = [];
       for (let i = 0; i < linkEls.length; i++) {
         const node = linkEls[i];
-
+        // id
         const url = node.getAttribute('href');
-
         // header
         const header = node.querySelector('.product-card__header > div.product-card__header-text');
         const name = header.children.item(0).textContent;
         const tagline = header.children.item(1).textContent;
-
         // revenue
         const revenueEls = node.querySelector('.product-card__revenue > div.product-card__revenue-text').children;
         const revenueNumber = revenueEls.item(0).textContent.trim();
@@ -83,7 +82,7 @@ class Scraper {
 
     const productsData = parseProductsData(rawProducts);
 
-    fs.writeFile('products.json', JSON.stringify(productsData), err => {
+    fs.writeFile(path.join(__dirname, 'fixtures/products.json'), JSON.stringify(productsData), err => {
       if (err) throw err;
       console.log('✅ Success!');
       console.log(productsData);
