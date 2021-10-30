@@ -8,15 +8,14 @@ class ProductService {
   public products = productModel;
 
   public async findAllProduct(): Promise<Product[]> {
-    const products: Product[] = await fetch(apiUrl);
     return this.products;
   }
 
   public async findProductById(productId: number): Promise<Product> {
-    const findProduct: Product = this.products.find(product => product.id === productId);
-    if (!findProduct) throw new HttpException(409, "You're not product");
-
-    return findProduct;
+    // const findProduct: Product = this.products.find(product => product.id === productId);
+    // if (!findProduct) throw new HttpException(409, "You're not product");
+    // return findProduct;
+    return this.products[0];
   }
 }
 

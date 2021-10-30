@@ -3,7 +3,7 @@ export enum RevenueExplanation {
   StripeVerified = 'stripe-verified',
 }
 export interface Product {
-  id: number;
+  id: string;
   name: string;
   tagline: string;
   revenueExplanation: RevenueExplanation;

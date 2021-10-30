@@ -19,14 +19,14 @@ describe('Testing Products', () => {
     });
   });
 
-  describe('[GET] /products/:id', () => {
-    it('response statusCode 200 / findOne', () => {
-      const productId = 1;
-      const findProduct: Product = productModel.find(product => product.id === productId);
-      const productsRoute = new ProductRoute();
-      const app = new App([productsRoute]);
+  // describe('[GET] /products/:id', () => {
+  //   it('response statusCode 200 / findOne', () => {
+  //     const productId = 1;
+  //     const findProduct: Product = productModel.find(product => product.id === productId);
+  //     const productsRoute = new ProductRoute();
+  //     const app = new App([productsRoute]);
 
-      return request(app.getServer()).get(`${productsRoute.path}/${productId}`).expect(200, { data: findProduct, message: 'findOne' });
-    });
-  });
+  //     return request(app.getServer()).get(`${productsRoute.path}/${productId}`).expect(200, { data: findProduct, message: 'findOne' });
+  //   });
+  // });
 });
