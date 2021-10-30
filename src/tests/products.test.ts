@@ -3,6 +3,7 @@ import App from '@/app';
 import { Product } from '@interfaces/products.interface';
 import productModel from '@models/products.model';
 import ProductRoute from '@routes/products.route';
+import { getProductFixture } from '@/fixtures';
 
 afterAll(async () => {
   await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
@@ -19,14 +20,14 @@ describe('Testing Products', () => {
     });
   });
 
-  // describe('[GET] /products/:id', () => {
-  //   it('response statusCode 200 / findOne', () => {
-  //     const productId = 1;
-  //     const findProduct: Product = productModel.find(product => product.id === productId);
-  //     const productsRoute = new ProductRoute();
-  //     const app = new App([productsRoute]);
-
-  //     return request(app.getServer()).get(`${productsRoute.path}/${productId}`).expect(200, { data: findProduct, message: 'findOne' });
-  //   });
-  // });
+  describe('[GET] /products/:id', () => {
+    it('response statusCode 200 / findOne', () => {
+      const productId = 'legup-health-for-now';
+      const expectedProduct = getProductFixture(productId);
+      const productsRoute = new ProductRoute();
+      const app = new App([productsRoute]);
+      const test = request(app.getServer()).get(`${productsRoute.path}/${productId}`);
+      test.expect(200, { data: expectedProduct, message: 'findOne' });
+    });
+  });
 });

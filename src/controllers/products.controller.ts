@@ -17,7 +17,7 @@ class ProductsController {
 
   public getProductById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const productId = Number(req.params.id);
+      const productId = req.params.id;
       const findOneProductData: Product = await this.productService.findProductById(productId);
 
       res.status(200).json({ data: findOneProductData, message: 'findOne' });
