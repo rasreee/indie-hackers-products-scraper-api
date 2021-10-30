@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
-import { Product, RevenueExplanation } from './interfaces/products.interface';
+import { RevenueExplanation } from './interfaces/products.interface';
 
 const productsUrl = 'https://indiehackers.com/products';
 
