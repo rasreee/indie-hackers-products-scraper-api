@@ -24,7 +24,16 @@ const getVisual = async () => {
         const name = header.children.item(0).textContent;
         const tagline = header.children.item(1).textContent;
 
-        productCards[i] = { id, name, tagline };
+        // get revenue data
+        const revenue = node.querySelector('.product-card__revenue > div.product-card__revenue-text');
+        const revenueNumber = revenue.children.item(0).childNodes.item(1).textContent.trim();
+        const revenueExplanationText = revenue.children
+          .item(1)
+          .textContent.trim()
+          .replace(/[\n|\s]+revenue/, '');
+        const revenueExplanation = revenueExplanationText === 'self-reported' ? revenueExplanationText : 'stripe-verified';
+
+        productCards[i] = { id, name, tagline, revenueNumber: parseInt(revenueNumber), revenueExplanation };
       }
 
       return productCards;
