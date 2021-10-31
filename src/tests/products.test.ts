@@ -1,9 +1,9 @@
-import request from 'supertest';
 import App from '@app';
-import { Product } from '@interfaces/products.interface';
-import productModel from '@models/products.model';
+import ProductModel from '@models/products.model';
 import ProductRoute from '@routes/products.route';
+import request from 'supertest';
 import { getProductFixture } from '@fixtures/products.fixture';
+import { Product } from '@interfaces/products.interface';
 
 afterAll(async () => {
   await new Promise<void>(resolve => setTimeout(() => resolve(), 5000));
@@ -29,8 +29,8 @@ describe('Testing Products', () => {
   });
 
   describe('[GET] /products/all', () => {
-    it('response statusCode 200 / getAll', () => {
-      const getProduct: Product[] = productModel;
+    it('response statusCode 200 / getAll', async () => {
+      const getProduct: Product[] = await ProductModel.find();
       const productsRoute = new ProductRoute();
       const app = new App([productsRoute]);
       return request(app.getServer()).get(`${productsRoute.path}/all`).expect(200, { data: getProduct, message: 'getAll' });

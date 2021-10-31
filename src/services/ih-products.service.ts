@@ -1,4 +1,4 @@
-import { GetProductHit, GetProductsResults, ProductTag } from '@fixtures/results.fixture';
+import { GetProductHit, GetProductsBody, Product } from '@interfaces/products.interface';
 import axios from 'axios';
 
 const API_URL =
@@ -36,10 +36,10 @@ class IndieHackersService {
   private headers = HEADERS;
   private paramsBase = `query=&hitsPerPage=${ParamKeys.hitsPerPage}&page=${ParamKeys.page}&restrictSearchableAttributes=&facets=%5B%5D&tagFilters=`;
 
-  private mapToProduct = (hit: GetProductHit): Omit<GetProductHit, '_highlightResult' | '_tags'> & { tags: ProductTag[] } => {
-    const { _tags, _highlightResult, ...rest } = hit;
+  private mapToProduct = (hit: GetProductHit): Product => {
+    const { _tags, _highlightResult, objectID, productId, startDateStr, last30DaysUniques, ...rest } = hit;
 
-    return { tags: _tags, ...rest };
+    return { id: productId, tags: _tags, startDate: startDateStr, ...rest } as Product;
   };
 
   private getBody = (params: string) => {
@@ -59,17 +59,17 @@ class IndieHackersService {
 
       if (response.status !== 200) throw new Error(response.statusText);
 
-      const results: GetProductsResults = response.data.results;
-      totalPages = results.nbPages;
-      const products: any[] = [];
-      results.hits.forEach(hit => {
-        const res = this.mapToProduct(hit);
-        products.push(res);
+      const results: GetProductsBody['results'] = response.data.results;
+
+      totalPages = results[0].nbPages;
+
+      const products = results[0].hits.map(hit => {
+        return this.mapToProduct(hit);
       });
 
       page += 1;
 
-      while (page < results) {}
+      while (page < products.length) {}
 
       return allProducts;
     } catch (err) {

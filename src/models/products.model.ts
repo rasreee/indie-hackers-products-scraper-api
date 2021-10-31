@@ -1,20 +1,26 @@
-import { Product, RevenueExplanation } from '@interfaces/products.interface';
+import { Product } from '@interfaces/products.interface';
+import mongoose from 'mongoose';
 
-const productModel: Product[] = [
-  {
-    id: 'airgram',
-    name: 'Airgram',
-    tagline: 'Recording, transcript, notes for zoom & google meet.',
-    revenueExplanation: RevenueExplanation.SelfReported,
-    revenueNumber: 0,
-  },
-  {
-    id: 'karma',
-    name: 'Karma',
-    tagline: 'WFH sorted: praise, rewards, surveys and watercooler chats',
-    revenueExplanation: RevenueExplanation.StripeVerified,
-    revenueNumber: 24877,
-  },
-];
+const schema = new mongoose.Schema<Product>({
+  id: String,
+  tags: Array,
+  name: String,
+  tagline: String,
+  startDate: String,
+  approvedTimestamp: Number,
+  avatarUrl: String,
+  bumpedTimestamp: Number,
+  createdTimestamp: Number,
+  description: String,
+  numFollowers: Number,
+  publishedTimestamp: Number,
+  revenue: Number,
+  twitterHandle: String,
+  updatedTimestamp: Number,
+  userIds: Array,
+  websiteUrl: String,
+});
 
-export default productModel;
+const ProductModel = mongoose.model('Product', schema);
+
+export default ProductModel;
