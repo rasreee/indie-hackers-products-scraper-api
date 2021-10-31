@@ -1,15 +1,10 @@
 import config from 'config';
-import fs from 'fs';
 import path from 'path';
 import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
 
 // logs dir
-const logDir: string = path.join(__dirname, config.get('log.dir'));
-
-if (!fs.existsSync(logDir)) {
-  fs.mkdirSync(logDir);
-}
+export const logDir: string = path.join(__dirname, config.get('log.dir'));
 
 // Define log format
 const logFormat = winston.format.printf(({ timestamp, level, message }) => `${timestamp} ${level}: ${message}`);
