@@ -2,9 +2,14 @@ import config from 'config';
 import path from 'path';
 import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
-
+import fs from 'fs';
 // logs dir
-export const logDir: string = path.join(__dirname, config.get('log.dir'));
+
+export const logDir: string = path.resolve(__dirname, config.get('log.dir'));
+
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir);
+}
 
 // Define log format
 const logFormat = winston.format.printf(({ timestamp, level, message }) => `${timestamp} ${level}: ${message}`);

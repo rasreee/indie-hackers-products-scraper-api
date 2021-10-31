@@ -1,7 +1,21 @@
+process.env['NODE_CONFIG_DIR'] = __dirname + '/configs';
+
 import puppeteer from 'puppeteer';
 import { ParserUtil } from '@utils/parser.util';
 import { logger } from '@utils/logger';
-import { mergeMessages, saveFixture } from '@utils/util';
+import { mergeMessages } from '@utils/util';
+import path from 'path';
+import fs from 'fs';
+
+export const saveFixture = (fileName: string, data: any) => {
+  fs.writeFile(path.resolve(__dirname, `../fixtures/${fileName}`), JSON.stringify(data), (err: any) => {
+    if (err) {
+      err instanceof Error && logger.error(`Failed to save fixture ${fileName}:`, err);
+      throw err;
+    }
+    logger.info(`✅ Saved fixture ${fileName}`);
+  });
+};
 
 const productsUrl = 'https://indiehackers.com/products';
 

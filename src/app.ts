@@ -15,7 +15,6 @@ import mongoose from 'mongoose';
 import { dbConnection } from '@databases';
 import { logger, stream } from '@utils/logger';
 import { Routes } from '@interfaces/routes.interface';
-
 class App {
   public app: express.Application;
   public port: string | number;
