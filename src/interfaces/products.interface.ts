@@ -87,22 +87,20 @@ export type GetProductHit = {
 };
 
 export type GetProductsData = {
-  results: Array<{
-    hits: GetProductHit[];
-    nbHits: number;
-    page: number;
-    nbPages: number;
-    hitsPerPage: number;
-    exhaustiveNbHits: boolean;
-    exhaustiveTypo: boolean;
-    query: string;
-    params: string;
-    index: 'products';
-    processingTimeMS: number;
-  }>;
+  hits: GetProductHit[];
+  nbHits: number;
+  page: number;
+  nbPages: number;
+  hitsPerPage: number;
+  exhaustiveNbHits: boolean;
+  exhaustiveTypo: boolean;
+  query: string;
+  params: string;
+  index: 'products';
+  processingTimeMS: number;
 };
 
-export interface Product extends Omit<GetProductHit, '_highlightResult' | '_tags' | 'objectID' | 'productId' | 'startDateStr' | 'last30DaysUniques'> {
+export interface Product extends Omit<GetProductHit, '_highlightResult' | '_tags' | 'objectID' | 'productId' | 'startDateStr'> {
   id: string;
   tags: ProductTag[];
   startDate: string;

@@ -1,14 +1,12 @@
-import puppeteer from 'puppeteer';
 import { HttpException } from '@exceptions/HttpException';
-import { logger } from '@utils/logger';
-import { mergeMessages } from '@utils/util';
-import { ParserUtil } from '@utils/parser.util';
 import { Product } from '@interfaces/products.interface';
 import { saveFixture } from '@utils/fixture.util';
-import { getProductsFixture } from '@fixtures/results.fixture';
+import ScraperService from './scraper.service';
 
-class ProductService {
-  public products = getProductsFixture();
+class ProductsService {
+  private products: Product[] = [];
+
+  constructor(private scraperService: ScraperService) {}
 
   public async getProducts(offset = 0, limit = 10): Promise<Product[]> {
     if (offset < 0 || offset >= this.products.length - 1) throw new HttpException(416, 'Range Not Satisfiable');
@@ -20,27 +18,20 @@ class ProductService {
   }
 
   public async getProductById(productId: string): Promise<Product> {
-    // const getProduct: Product = this.products.get(product => product.id === productId);
-    // if (!getProduct) throw new HttpException(409, "You're not product");
-    // return getProduct;
-    return this.products[0];
+    const found = this.products.find(product => product.id === productId);
+    if (!found) throw new HttpException(409, `Nonexistent product ID ${productId}`);
+    return found;
   }
 
   public async syncProducts(): Promise<Product[]> {
-    const rawData = await scrapeProductsData();
-
-    const { errors, products } = ParserUtil.parseProducts(rawData);
-
-    errors.length && logger.error(`Omitted ${errors.length} items due to parsing errors.\nDetails: `, mergeMessages(errors));
-    logger.info(`Saved ${products.length}/${rawData.length}`, errors);
+    const products = await this.scraperService.getAllProducts();
 
     this.products = [...products];
 
-    saveFixture('raw-products.json', rawData);
     saveFixture('products.json', products);
 
     return products;
   }
 }
 
-export default ProductService;
+export default ProductsService;

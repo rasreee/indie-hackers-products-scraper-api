@@ -1,5 +1,6 @@
 import { GetProductHit, GetProductsData, Product } from '@interfaces/products.interface';
 import axios from 'axios';
+import { Logger } from 'winston';
 
 const API_URL =
   'https://n86t1r3owz-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(3.35.1)%3B%20Browser%20(lite)%3B%20JS%20Helper%202.21.1&x-algolia-application-id=N86T1R3OWZ&x-algolia-api-key=5140dac5e87f47346abbda1a34ee70c3';
@@ -34,30 +35,54 @@ const ParamKeys = {
 
 const PARAMS = `query=&hitsPerPage=${ParamKeys.hitsPerPage}&page=${ParamKeys.page}&restrictSearchableAttributes=&facets=%5B%5D&tagFilters=`;
 
-const BODY = { requests: [{ indexName: 'products', params: PARAMS } as IHGetProductsReq] };
+const ARGS = { headers: HEADERS, apiUrl: API_URL, params: PARAMS };
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const defaultParser = ({ _tags: tags, productId: id, startDateStr: startDate, _highlightResult, ...rest }: GetProductHit): Product => {
+  const product: Product = { id, tags, startDate, ...rest };
+
+  return product;
+};
 
 class ScraperService {
-  constructor(private apiUrl = API_URL, private headers = HEADERS, private params = PARAMS) {}
+  constructor(private args = ARGS, private logger: Logger, private parser = defaultParser) {}
 
-  private getBody = (page = 0, hitsPerPage = HITS_PER_PAGE) => {
-    const params = this.params.replace(ParamKeys.hitsPerPage, `${hitsPerPage}`).replace(ParamKeys.page, `${page}`);
+  private getBody = (page: number, hitsPerPage = HITS_PER_PAGE) => {
+    const params = this.args.params.replace(ParamKeys.hitsPerPage, `${hitsPerPage}`).replace(ParamKeys.page, `${page}`);
     return { requests: [{ indexName: 'products', params } as IHGetProductsReq] };
   };
 
-  public getProducts = async () => {
-    const response = await axios.post(this.apiUrl, this.getBody(), {
-      headers: this.headers,
+  public getPage = async (page = 0) => {
+    const response = await axios.post(this.args.apiUrl, this.getBody(page), {
+      headers: this.args.headers,
     });
-    return response.data as GetProductsData;
+    return response.data.results[0] as GetProductsData;
   };
 
   getAllProducts = async () => {
     try {
-      const allProducts: Array<Promise<GetProductsData>> = [];
-      const { hits, nbPages: totalPages } = await this.getProducts().then(data => data.results[0]);
+      const initialPromise = this.getPage();
 
+      const allPromises = await initialPromise.then(({ hits, nbPages: totalPages }) => {
+        const promises: Array<Promise<GetProductHit[]>> = [new Promise(resolve => resolve(hits))];
+
+        let page = 1;
+        while (page < totalPages) {
+          promises[page] = this.getPage(page).then(data => data.hits);
+          page += 1;
+        }
+
+        return promises;
+      });
+
+      const allHits = await Promise.all(allPromises);
+
+      const allProducts = allHits.flat().map(this.parser);
+      this.logger.info(`Scraped ${allProducts.length} products:`);
+      this.logger.info(allProducts);
       return allProducts;
     } catch (err) {
+      this.logger.error('Failed to scrape products: ', err);
       throw err;
     }
   };
