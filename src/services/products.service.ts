@@ -1,4 +1,4 @@
-import { HttpException } from '@/exceptions/HttpException';
+import { HttpException } from '@exceptions/HttpException';
 import { Product } from '@interfaces/products.interface';
 import productModel from '@models/products.model';
 

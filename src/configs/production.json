@@ -1,17 +1,20 @@
 {
-    "env": "production",
-    "dbConfig": {
-        "host": "localhost",
-        "database": "mongoose",
-        "port": 27017
-    },
-    "secretKey": "secretKey",
-    "log": {
-        "format": "combined",
-        "dir": "../logs"
-    },
-    "cors": {
-        "origin": "your.domain.com",
-        "credentials": true
-    }
+  "env": "production",
+  "dbConfig": {
+    "host": "localhost",
+    "database": "mongoose",
+    "port": 27017
+  },
+  "fixture": {
+    "dir": "../fixtures"
+  },
+  "secretKey": "secretKey",
+  "log": {
+    "format": "combined",
+    "dir": "../logs"
+  },
+  "cors": {
+    "origin": "your.domain.com",
+    "credentials": true
+  }
 }

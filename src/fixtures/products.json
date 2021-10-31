@@ -1,97 +1,97 @@
 [{
-  "id": "legup-health-for-now",
-  "name": "LegUp Health",
-  "tagline": "For Utahns who buy their own health insurance",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 2
+  "id": "/product/poi-data",
+  "name": "PoiData",
+  "tagline": "PointofInterestData",
+  "revenueNumber": 14400,
+  "revenueExplanation": "stripe-verified"
 }, {
-  "id": "inboxes-app",
-  "name": "Inboxes app",
-  "tagline": "Temporary disposable email addresses",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
-}, {
-  "id": "airgram",
-  "name": "Airgram",
-  "tagline": "Recording, transcript, notes for zoom & google meet.",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
-}, {
-  "id": "brick",
-  "name": "Brick",
-  "tagline": "The easiest way to publish your writing",
-  "revenueExplanation": "stripe-verified",
-  "monthlyRevenue": 15
-}, {
-  "id": "searchmonitor",
-  "name": "Searchmonitor",
-  "tagline": "Shopify app that helps shop owners know what users search",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
-}, {
-  "id": "ayrshare",
-  "name": "Ayrshare",
-  "tagline": "Post to all your social media networks via an API",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
-}, {
-  "id": "twayo-biz",
+  "id": "/product/twayo-biz",
   "name": "Twayobiz",
-  "tagline": "File storage for business",
-  "revenueExplanation": "stripe-verified",
-  "monthlyRevenue": 0
+  "tagline": "Filestorageforbusiness",
+  "revenueNumber": 0,
+  "revenueExplanation": "stripe-verified"
 }, {
-  "id": "karmabot",
+  "id": "/product/legup-health-for-now",
+  "name": "LegUpHealth",
+  "tagline": "ForUtahnswhobuytheirownhealthinsurance",
+  "revenueNumber": 2000,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "/product/inboxes-app",
+  "name": "Inboxesapp",
+  "tagline": "Temporarydisposableemailaddresses",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "/product/airgram",
+  "name": "Airgram",
+  "tagline": "Recording,transcript,notesforzoom&googlemeet.",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "/product/brick",
+  "name": "Brick",
+  "tagline": "Theeasiestwaytopublishyourwriting",
+  "revenueNumber": 15,
+  "revenueExplanation": "stripe-verified"
+}, {
+  "id": "/product/searchmonitor",
+  "name": "Searchmonitor",
+  "tagline": "Shopifyappthathelpsshopownersknowwhatuserssearch",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "/product/ayrshare",
+  "name": "Ayrshare",
+  "tagline": "PosttoallyoursocialmedianetworksviaanAPI",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "/product/karmabot",
   "name": "Karma",
-  "tagline": "WFH sorted: praise, rewards, surveys and watercooler chats",
-  "revenueExplanation": "stripe-verified",
-  "monthlyRevenue": 24
+  "tagline": "WFHsorted:praise,rewards,surveysandwatercoolerchats",
+  "revenueNumber": 24877,
+  "revenueExplanation": "stripe-verified"
 }, {
-  "id": "outdone",
+  "id": "/product/outdone",
   "name": "Outdone",
-  "tagline": "The Ai-powered gift recommender",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
+  "tagline": "TheAi-poweredgiftrecommender",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
 }, {
-  "id": "sekker",
+  "id": "/product/sekker",
   "name": "Sekker",
-  "tagline": "Customer Experience Surveys",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
+  "tagline": "CustomerExperienceSurveys",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
 }, {
-  "id": "flxs",
+  "id": "/product/flxs",
   "name": "FLXS",
-  "tagline": "Privacy-first SaaS and other software",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
+  "tagline": "Privacy-firstSaaSandothersoftware",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
 }, {
-  "id": "outer-space-shack",
-  "name": "Outer Space Shack",
-  "tagline": "Realistic space outpost management game",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
+  "id": "/product/outer-space-shack",
+  "name": "OuterSpaceShack",
+  "tagline": "Realisticspaceoutpostmanagementgame",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
 }, {
-  "id": "local-store-xyz",
-  "name": "Local Stores XYZ",
-  "tagline": "Making lives easier for local stores to navigate regulations",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
+  "id": "/product/local-store-xyz",
+  "name": "LocalStoresXYZ",
+  "tagline": "Makingliveseasierforlocalstorestonavigateregulations",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
 }, {
-  "id": "waterfaller",
+  "id": "/product/waterfaller",
   "name": "Waterfaller",
-  "tagline": "Find and fix all the slowdowns on your web page",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 0
+  "tagline": "Findandfixalltheslowdownsonyourwebpage",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
 }, {
-  "id": "instatus",
+  "id": "/product/instatus",
   "name": "Instatus",
-  "tagline": "Quick & beautiful status pages",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 3
-}, {
-  "id": "threadstart",
-  "name": "ThreadStart",
-  "tagline": "Build better Twitter threads",
-  "revenueExplanation": "self-reported",
-  "monthlyRevenue": 43
+  "tagline": "Quick&beautifulstatuspages",
+  "revenueNumber": 3003,
+  "revenueExplanation": "self-reported"
 }]

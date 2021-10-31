@@ -1,8 +1,8 @@
-import { Product } from '@/interfaces/products.interface';
-import productFixtures from './products.json';
+import { Product } from '@interfaces/products.interface';
+import productFixtures from './raw-products.json';
 
-export const getProductFixtures = (): Product[] => {
-  const result = productFixtures.map(item => ({ ...item } as Product));
+export const getProductFixtures = (): any[] => {
+  const result = productFixtures.map(item => ({ ...item }));
 
   return result;
 };

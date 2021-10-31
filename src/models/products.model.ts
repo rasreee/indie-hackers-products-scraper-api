@@ -6,14 +6,14 @@ const productModel: Product[] = [
     name: 'Airgram',
     tagline: 'Recording, transcript, notes for zoom & google meet.',
     revenueExplanation: RevenueExplanation.SelfReported,
-    monthlyRevenue: 0,
+    revenueNumber: 0,
   },
   {
     id: 'karma',
     name: 'Karma',
     tagline: 'WFH sorted: praise, rewards, surveys and watercooler chats',
     revenueExplanation: RevenueExplanation.StripeVerified,
-    monthlyRevenue: 24877,
+    revenueNumber: 24877,
   },
 ];
 

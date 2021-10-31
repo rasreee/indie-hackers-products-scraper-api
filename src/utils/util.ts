@@ -17,3 +17,15 @@ export const isEmpty = (value: string | number | object): boolean => {
     return false;
   }
 };
+
+export const isObject = (o: any): o is object => {
+  return typeof o === 'object';
+};
+
+export const isString = (o: any): o is string => {
+  return typeof o === 'string';
+};
+
+export const isNumber = (o: any): o is number => {
+  return typeof o === 'number';
+};

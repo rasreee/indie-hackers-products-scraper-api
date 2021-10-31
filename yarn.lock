@@ -926,7 +926,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pm2/pm2-version-check@latest":
+"@pm2/pm2-version-check@npm:latest":
   version: 1.0.4
   resolution: "@pm2/pm2-version-check@npm:1.0.4"
   dependencies:
@@ -1073,16 +1073,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bson@npm:*":
-  version: 4.2.0
-  resolution: "@types/bson@npm:4.2.0"
-  dependencies:
-    bson: "*"
-  checksum: 55abf60c57b7f05655c210b386392636a299a7df18b89cec2cde0aa87374d97dd4ac9632226b0f6fe135d16ad4296ae5ddc782f6e9132d38c53dd26a6df8e704
-  languageName: node
-  linkType: hard
-
-"@types/bson@npm:1.x || 4.0.x":
+"@types/bson@npm:*, @types/bson@npm:1.x || 4.0.x":
   version: 4.0.5
   resolution: "@types/bson@npm:4.0.5"
   dependencies:
@@ -1292,11 +1283,11 @@ __metadata:
   linkType: hard
 
 "@types/mongoose@npm:^5.10.1":
-  version: 5.11.97
-  resolution: "@types/mongoose@npm:5.11.97"
+  version: 5.11.96
+  resolution: "@types/mongoose@npm:5.11.96"
   dependencies:
     mongoose: "*"
-  checksum: 54c896814a92898535eb8965f90308f2661b75f4a53e28405802fbe9f90ba7d37140f151b1e291e08555a1700d3486911104c108ed02a94c6feddeab6bd3bfea
+  checksum: 65bb2d6c3b4cfff880ef226bdd8fc1bec5346e4f173ddc48b40f21a20585b550595ca0abb9466efdea007031fff5464a0c454d61b1b0a7f1aec83e63c28a52dc
   languageName: node
   linkType: hard
 
@@ -2200,19 +2191,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bson@npm:*, bson@npm:^4.2.2, bson@npm:^4.5.2":
+"bson@npm:^1.1.4":
+  version: 1.1.6
+  resolution: "bson@npm:1.1.6"
+  checksum: 75762c9b7e0b3156cb0f38c7eb9ffcade53f0b04ac87dece9cba38f6dc570d9af91251de6a8988b294063cfaa21894c60ac9e85c34176accb3674acb092d66a7
+  languageName: node
+  linkType: hard
+
+"bson@npm:^4.2.2, bson@npm:^4.5.2":
   version: 4.5.3
   resolution: "bson@npm:4.5.3"
   dependencies:
     buffer: ^5.6.0
   checksum: f01e5a19851c43a8603dcfd3964b9758632e6d778be93c70cdc8ebc490bb7a8c028480a7f0bb4fa6205283c28510f191f68bba3ebe6eb97c811412a96966491a
-  languageName: node
-  linkType: hard
-
-"bson@npm:^1.1.4":
-  version: 1.1.6
-  resolution: "bson@npm:1.1.6"
-  checksum: 75762c9b7e0b3156cb0f38c7eb9ffcade53f0b04ac87dece9cba38f6dc570d9af91251de6a8988b294063cfaa21894c60ac9e85c34176accb3674acb092d66a7
   languageName: node
   linkType: hard
 
@@ -3878,12 +3869,12 @@ __metadata:
   linkType: hard
 
 "follow-redirects@npm:^1.14.0, follow-redirects@npm:^1.14.4":
-  version: 1.14.4
-  resolution: "follow-redirects@npm:1.14.4"
+  version: 1.14.5
+  resolution: "follow-redirects@npm:1.14.5"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: d4ce74cf5c6f363168b97e706b914eb9ffb6bf4d4c6d8f8330b93088d9b90e566611ddbcf0e42c8ed5fd17598dfeda1d19230d3e9d6d6c6b4d1c10ec3a0b99be
+  checksum: f004a76b2ee3a849772c2816e30928253bf47537b0f00184d89f4966413add96a228a4d96ca8c702bc045a683c52c2ba41545c915cc1a5e33bf8fd9d07b59aee
   languageName: node
   linkType: hard
 
@@ -3899,9 +3890,9 @@ __metadata:
   linkType: hard
 
 "formidable@npm:^1.2.2":
-  version: 1.2.4
-  resolution: "formidable@npm:1.2.4"
-  checksum: d46c5df9492d3242924206128a61d5241d0505a89ab3c3f7387428d49d94b249410c3adb00e8b63e429f7c4e0aa11ed7413980376ee06255d24ca5246efdf541
+  version: 1.2.6
+  resolution: "formidable@npm:1.2.6"
+  checksum: 2b68ed07ba88302b9c63f8eda94f19a460cef6017bfda48348f09f41d2a36660c9353137991618e0e4c3db115b41e4b8f6fa63bc973b7a7c91dec66acdd02a56
   languageName: node
   linkType: hard
 

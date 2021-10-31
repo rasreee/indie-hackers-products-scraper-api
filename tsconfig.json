@@ -22,7 +22,8 @@
     "importHelpers": true,
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"],
+      "@app": ["app"],
+      "@scraper": ["scraper"],
       "@controllers/*": ["controllers/*"],
       "@databases": ["databases"],
       "@dtos/*": ["dtos/*"],

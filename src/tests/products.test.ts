@@ -1,9 +1,9 @@
 import request from 'supertest';
-import App from '@/app';
+import App from '@app';
 import { Product } from '@interfaces/products.interface';
 import productModel from '@models/products.model';
 import ProductRoute from '@routes/products.route';
-import { getProductFixture } from '@/fixtures';
+import { getProductFixture } from '@fixtures/products.fixture';
 
 afterAll(async () => {
   await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
