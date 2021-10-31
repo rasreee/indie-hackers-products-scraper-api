@@ -1,8 +1,8 @@
 import ProductsService from '@services/products.service';
+import QueueService from '@services/queue.service';
 import ScraperService from '@services/scraper.service';
 import { NextFunction, Request, Response } from 'express';
 import { Product } from '@interfaces/products.interface';
-import QueueService from '@services/queue.service';
 
 class ProductsController {
   public productsService: ProductsService;
