@@ -1,1 +1,97 @@
-[{"id":"web-3-0-jobs","name":"Web3Jobs","tagline":"#1 Source for Web3Jobs ⚠ COMING SOON! ⚠","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"poi-data","name":"PoiData","tagline":"Point of Interest Data","revenueNumber":14400,"revenueExplanation":"stripe-verified"},{"id":"twayo-biz","name":"Twayobiz","tagline":"File storage for business","revenueNumber":0,"revenueExplanation":"stripe-verified"},{"id":"legup-health-for-now","name":"LegUpHealth","tagline":"For Utahns who buy their own health insurance","revenueNumber":2000,"revenueExplanation":"self-reported"},{"id":"inboxes-app","name":"Inboxesapp","tagline":"Temporary disposable email addresses","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"airgram","name":"Airgram","tagline":"Recording, transcript, notes for zoom & google meet.","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"brick","name":"Brick","tagline":"The easiest way to publish your writing","revenueNumber":15,"revenueExplanation":"stripe-verified"},{"id":"searchmonitor","name":"Searchmonitor","tagline":"Shopify app that helps shop owners know what users search","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"ayrshare","name":"Ayrshare","tagline":"Post to all your social media networks via an API","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"karmabot","name":"Karma","tagline":"WFH sorted: praise, rewards, surveys and watercooler chats","revenueNumber":24877,"revenueExplanation":"stripe-verified"},{"id":"outdone","name":"Outdone","tagline":"The Ai-powered gift recommender","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"sekker","name":"Sekker","tagline":"Customer Experience Surveys","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"flxs","name":"FLXS","tagline":"Privacy-first SaaS and other software","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"outer-space-shack","name":"OuterSpaceShack","tagline":"Realistic space outpost management game","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"local-store-xyz","name":"LocalStoresXYZ","tagline":"Making lives easier for local stores to navigate regulations","revenueNumber":0,"revenueExplanation":"self-reported"},{"id":"waterfaller","name":"Waterfaller","tagline":"Find and fix all the slowdowns on your web page","revenueNumber":0,"revenueExplanation":"self-reported"}]
+[{
+  "id": "web-3-0-jobs",
+  "name": "Web3Jobs",
+  "tagline": "#1 Source for Web3Jobs ⚠ COMING SOON! ⚠",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "poi-data",
+  "name": "PoiData",
+  "tagline": "Point of Interest Data",
+  "revenueNumber": 14400,
+  "revenueExplanation": "stripe-verified"
+}, {
+  "id": "twayo-biz",
+  "name": "Twayobiz",
+  "tagline": "File storage for business",
+  "revenueNumber": 0,
+  "revenueExplanation": "stripe-verified"
+}, {
+  "id": "legup-health-for-now",
+  "name": "LegUpHealth",
+  "tagline": "For Utahns who buy their own health insurance",
+  "revenueNumber": 2000,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "inboxes-app",
+  "name": "Inboxesapp",
+  "tagline": "Temporary disposable email addresses",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "airgram",
+  "name": "Airgram",
+  "tagline": "Recording, transcript, notes for zoom & google meet.",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "brick",
+  "name": "Brick",
+  "tagline": "The easiest way to publish your writing",
+  "revenueNumber": 15,
+  "revenueExplanation": "stripe-verified"
+}, {
+  "id": "searchmonitor",
+  "name": "Searchmonitor",
+  "tagline": "Shopify app that helps shop owners know what users search",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "ayrshare",
+  "name": "Ayrshare",
+  "tagline": "Post to all your social media networks via an API",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "karmabot",
+  "name": "Karma",
+  "tagline": "WFH sorted: praise, rewards, surveys and watercooler chats",
+  "revenueNumber": 24877,
+  "revenueExplanation": "stripe-verified"
+}, {
+  "id": "outdone",
+  "name": "Outdone",
+  "tagline": "The Ai-powered gift recommender",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "sekker",
+  "name": "Sekker",
+  "tagline": "Customer Experience Surveys",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "flxs",
+  "name": "FLXS",
+  "tagline": "Privacy-first SaaS and other software",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "outer-space-shack",
+  "name": "OuterSpaceShack",
+  "tagline": "Realistic space outpost management game",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "local-store-xyz",
+  "name": "LocalStoresXYZ",
+  "tagline": "Making lives easier for local stores to navigate regulations",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}, {
+  "id": "waterfaller",
+  "name": "Waterfaller",
+  "tagline": "Find and fix all the slowdowns on your web page",
+  "revenueNumber": 0,
+  "revenueExplanation": "self-reported"
+}]
