@@ -24,6 +24,8 @@
     "baseUrl": "src",
     "paths": {
       "@app": ["app"],
+      "@common/*": ["./common/*"],
+      "@queues/*": ["./queues/*"],
       "@controllers/*": ["controllers/*"],
       "@databases": ["databases"],
       "@dtos/*": ["dtos/*"],

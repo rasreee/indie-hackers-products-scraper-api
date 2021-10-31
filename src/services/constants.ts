@@ -15,7 +15,7 @@ export const DEFAULT_HEADERS = {
   'sec-fetch-dest': 'empty',
   'sec-fetch-mode': 'cors',
   'sec-fetch-site': 'cross-site',
-  Referer: 'https://www.scraper.com/products',
+  Referer: 'https://www.indiehackers.com/products',
   'Referrer-Policy': 'unsafe-url',
 };
 
