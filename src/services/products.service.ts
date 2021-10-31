@@ -3,6 +3,7 @@ import { HttpException } from '@exceptions/HttpException';
 import { GetProductHit, Product } from '@interfaces/products.interface';
 import { logger } from '@utils/logger';
 import { defaultParser } from './constants';
+import SearchService from './search.service';
 
 export interface ProductTask {
   type: 'bulkSaveProducts';
@@ -12,7 +13,7 @@ export interface ProductTask {
 class ProductsService {
   private products: Product[] = [];
 
-  constructor(private scraperService: ScraperService, private queueService: QueueService) {}
+  constructor(private SearchService: SearchService) {}
 
   public async getProducts(offset = 0, limit = 10): Promise<Product[]> {
     if (offset < 0 || offset >= this.products.length - 1) throw new HttpException(416, 'Range Not Satisfiable');
