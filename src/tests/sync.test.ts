@@ -3,10 +3,11 @@ import App from '@app';
 import SyncRoute from '@routes/sync.route';
 
 afterAll(async () => {
-  await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
+  await new Promise<void>(resolve => setTimeout(() => resolve(), 5000));
 });
 
 describe('Testing Sync', () => {
+  jest.setTimeout(30000);
   describe('[GET] /sync', () => {
     it('response statusCode 200', () => {
       const syncRoute = new SyncRoute();

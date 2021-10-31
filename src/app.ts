@@ -11,7 +11,7 @@ import hpp from 'hpp';
 import morgan from 'morgan';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-import { connect, set } from 'mongoose';
+import mongoose from 'mongoose';
 import { dbConnection } from '@databases';
 import { logger, stream } from '@utils/logger';
 import { Routes } from '@interfaces/routes.interface';
@@ -48,10 +48,10 @@ class App {
 
   private connectToDatabase() {
     if (this.env !== 'production') {
-      set('debug', true);
+      mongoose.set('debug', true);
     }
 
-    connect(dbConnection.url, dbConnection.options);
+    mongoose.connect(dbConnection.url, dbConnection.options);
   }
 
   private initializeMiddlewares() {
