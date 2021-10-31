@@ -86,7 +86,7 @@ export type GetProductHit = {
   _highlightResult: Record<HighlightKey, HighlightResult>;
 };
 
-export type GetProductsBody = {
+export type GetProductsData = {
   results: Array<{
     hits: GetProductHit[];
     nbHits: number;

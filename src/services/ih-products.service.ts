@@ -1,4 +1,4 @@
-import { GetProductHit, GetProductsBody, Product } from '@interfaces/products.interface';
+import { GetProductHit, GetProductsData, Product } from '@interfaces/products.interface';
 import axios from 'axios';
 
 const API_URL =
@@ -32,9 +32,12 @@ const ParamKeys = {
   hitsPerPage: ':hitsPerPage',
 };
 
+const PARAMS = `query=&hitsPerPage=${ParamKeys.hitsPerPage}&page=${ParamKeys.page}&restrictSearchableAttributes=&facets=%5B%5D&tagFilters=`;
+
+const BODY = { requests: [{ indexName: 'products', params: PARAMS } as IHRequest] };
+
 class IndieHackersService {
-  private headers = HEADERS;
-  private paramsBase = `query=&hitsPerPage=${ParamKeys.hitsPerPage}&page=${ParamKeys.page}&restrictSearchableAttributes=&facets=%5B%5D&tagFilters=`;
+  constructor(private apiUrl = API_URL, private headers = HEADERS, private params = PARAMS) {}
 
   private mapToProduct = (hit: GetProductHit): Product => {
     const { _tags, _highlightResult, objectID, productId, startDateStr, last30DaysUniques, ...rest } = hit;
@@ -42,7 +45,8 @@ class IndieHackersService {
     return { id: productId, tags: _tags, startDate: startDateStr, ...rest } as Product;
   };
 
-  private getBody = (params: string) => {
+  private getBody = (page = 0, hitsPerPage = HITS_PER_PAGE) => {
+    const params = this.params.replace(ParamKeys.hitsPerPage, `${hitsPerPage}`).replace(ParamKeys.page, `${page}`);
     return { requests: [{ indexName: 'products', params } as IHRequest] };
   };
 
@@ -50,26 +54,23 @@ class IndieHackersService {
     try {
       const allProducts: any[] = [];
       let page = 0;
-      let totalPages = 1;
-      const params = this.paramsBase.replace(ParamKeys.hitsPerPage, `${HITS_PER_PAGE}`).replace(ParamKeys.page, '0');
+      let numPages = 1;
 
-      const response = await axios.post(API_URL, this.getBody(params), {
+      const response = await axios.post(this.apiUrl, this.getBody(), {
         headers: this.headers,
       });
 
       if (response.status !== 200) throw new Error(response.statusText);
 
-      const results: GetProductsBody['results'] = response.data.results;
+      const data: GetProductsData = response.data;
+      const results = data.results[0];
 
-      totalPages = results[0].nbPages;
+      const allHits = results.hits;
 
-      const products = results[0].hits.map(hit => {
-        return this.mapToProduct(hit);
-      });
-
+      // now we know how many pages there are in total
+      numPages = results.nbPages;
       page += 1;
-
-      while (page < products.length) {}
+      while (page < numPages) {}
 
       return allProducts;
     } catch (err) {

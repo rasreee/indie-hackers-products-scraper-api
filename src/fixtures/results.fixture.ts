@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { GetProductsBody, Product } from '@interfaces/products.interface';
+import { GetProductsData, Product } from '@interfaces/products.interface';
 import fixtureJson from './algolia.json';
 
 export const getProductsDataFixture = () => {
-  return fixtureJson as GetProductsBody;
+  return fixtureJson as GetProductsData;
 };
 
 export const getProductsFixture = () => {
