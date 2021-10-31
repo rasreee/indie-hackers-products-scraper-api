@@ -3,6 +3,7 @@ const { compilerOptions } = require('./tsconfig.json');
 
 module.exports = {
   preset: 'ts-jest',
+  setupFilesAfterEnv: ['<rootDir>config/jest.js'],
   testEnvironment: 'node',
   roots: ['<rootDir>/src'],
   transform: {

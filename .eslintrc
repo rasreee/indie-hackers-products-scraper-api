@@ -1,5 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
+  "plugins": ["jest"],
   "extends": ["prettier", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -13,6 +14,7 @@
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-var-requires": "off",
+    "jest/expect-expect": 0
   }
 }
