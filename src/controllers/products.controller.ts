@@ -1,11 +1,11 @@
-import { NextFunction, Request, Response } from 'express';
-import { Product } from '@interfaces/products.interface';
 import ProductsService from '@services/products.service';
 import ScraperService from '@services/scraper.service';
+import { NextFunction, Request, Response } from 'express';
+import { Product } from '@interfaces/products.interface';
 
 class ProductsController {
   public productsService: ProductsService;
-  constructor(scraperService: ScraperService) {
+  constructor(scraperService = new ScraperService()) {
     this.productsService = new ProductsService(scraperService);
   }
 

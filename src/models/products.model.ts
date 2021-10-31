@@ -7,6 +7,7 @@ const schema = new mongoose.Schema<Product>({
   name: String,
   tagline: String,
   startDate: String,
+  last30DaysUniques: null,
   approvedTimestamp: Number,
   avatarUrl: String,
   bumpedTimestamp: Number,

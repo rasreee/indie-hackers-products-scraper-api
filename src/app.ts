@@ -1,5 +1,8 @@
 process.env['NODE_CONFIG_DIR'] = __dirname + '/configs';
 
+import { dbConnection } from '@databases';
+import { logger, stream } from '@utils/logger';
+import { Routes } from '@interfaces/routes.interface';
 import compression from 'compression';
 import config from 'config';
 import cookieParser from 'cookie-parser';
@@ -8,13 +11,10 @@ import errorMiddleware from '@middlewares/error.middleware';
 import express from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
+import mongoose from 'mongoose';
 import morgan from 'morgan';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-import mongoose from 'mongoose';
-import { dbConnection } from '@databases';
-import { logger, stream } from '@utils/logger';
-import { Routes } from '@interfaces/routes.interface';
 class App {
   public app: express.Application;
   public port: string | number;

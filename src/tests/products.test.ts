@@ -2,7 +2,6 @@ import App from '@app';
 import ProductModel from '@models/products.model';
 import ProductRoute from '@routes/products.route';
 import request from 'supertest';
-import { getProductFixture } from '@fixtures/products.fixture';
 import { Product } from '@interfaces/products.interface';
 
 afterAll(async () => {
@@ -34,17 +33,6 @@ describe('Testing Products', () => {
       const productsRoute = new ProductRoute();
       const app = new App([productsRoute]);
       return request(app.getServer()).get(`${productsRoute.path}/all`).expect(200, { data: getProduct, message: 'getAll' });
-    });
-  });
-
-  describe('[GET] /products/:id', () => {
-    it('response statusCode 200 / getOne', () => {
-      const productId = 'legup-health-for-now';
-      const expectedProduct = getProductFixture(productId);
-      const productsRoute = new ProductRoute();
-      const app = new App([productsRoute]);
-      const test = request(app.getServer()).get(`${productsRoute.path}/${productId}`);
-      test.expect(200, { data: expectedProduct, message: 'getOne' });
     });
   });
 

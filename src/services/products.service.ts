@@ -1,7 +1,7 @@
+import ScraperService from './scraper.service';
 import { HttpException } from '@exceptions/HttpException';
 import { Product } from '@interfaces/products.interface';
 import { saveFixture } from '@utils/fixture.util';
-import ScraperService from './scraper.service';
 
 class ProductsService {
   private products: Product[] = [];

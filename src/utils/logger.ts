@@ -1,10 +1,10 @@
 import config from 'config';
+import fs from 'fs';
 import path from 'path';
 import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
-import fs from 'fs';
-// logs dir
 
+// logs dir
 export const logDir: string = path.resolve(__dirname, config.get('log.dir'));
 
 if (!fs.existsSync(logDir)) {

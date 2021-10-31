@@ -1,6 +1,6 @@
-import { GetProductHit, GetProductsData, Product } from '@interfaces/products.interface';
 import axios from 'axios';
-import { Logger } from 'winston';
+import { GetProductHit, GetProductsData, Product } from '@interfaces/products.interface';
+import { logger } from '@utils/logger';
 
 const API_URL =
   'https://n86t1r3owz-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(3.35.1)%3B%20Browser%20(lite)%3B%20JS%20Helper%202.21.1&x-algolia-application-id=N86T1R3OWZ&x-algolia-api-key=5140dac5e87f47346abbda1a34ee70c3';
@@ -45,7 +45,7 @@ const defaultParser = ({ _tags: tags, productId: id, startDateStr: startDate, _h
 };
 
 class ScraperService {
-  constructor(private args = ARGS, private logger: Logger, private parser = defaultParser) {}
+  constructor(private args = ARGS, private log = logger, private parser = defaultParser) {}
 
   private getBody = (page: number, hitsPerPage = HITS_PER_PAGE) => {
     const params = this.args.params.replace(ParamKeys.hitsPerPage, `${hitsPerPage}`).replace(ParamKeys.page, `${page}`);
@@ -78,11 +78,11 @@ class ScraperService {
       const allHits = await Promise.all(allPromises);
 
       const allProducts = allHits.flat().map(this.parser);
-      this.logger.info(`Scraped ${allProducts.length} products:`);
-      this.logger.info(allProducts);
+      this.log.info(`Scraped ${allProducts.length} products:`);
+      this.log.info(allProducts);
       return allProducts;
     } catch (err) {
-      this.logger.error('Failed to scrape products: ', err);
+      this.log.error('Failed to scrape products: ', err);
       throw err;
     }
   };
