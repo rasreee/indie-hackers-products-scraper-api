@@ -10,4 +10,8 @@ export default class SearchService {
     this.client = algoliasearch(APPLICATION_ID, API_KEY);
     this.index = this.client.initIndex('products');
   }
+
+  async foo() {
+    this.index.browseObjects();
+  }
 }
