@@ -8,4 +8,5 @@
 
 ## Todo
 
+- [ ] Get product data from each specific sub-path instead of from the little cards ...
 - [ ] Detect website layout changes by writing unit tests for each specific URL I'll be scraping from.

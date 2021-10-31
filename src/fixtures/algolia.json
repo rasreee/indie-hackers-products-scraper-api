@@ -1,0 +1,916 @@
+{
+  "results": [{
+    "hits": [{
+      "_tags": ["commitment-side-project", "employees-0", "founder-multi", "founders-code-yes", "funding-self", "platform-web", "revenue-model-transactional", "vertical-b2b", "vertical-b2c", "vertical-jobs-hiring"],
+      "approvedTimestamp": 1634285211303,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/web-3-0-jobs/dz7tmfVlXGT16MK1hZCls8zvSu33",
+      "bumpedTimestamp": 1635655874362,
+      "createdTimestamp": 1634234190165,
+      "description": "It exists because there are a lot of niche job boards, and I see the potential in a Web 3.0 programming board",
+      "last30DaysUniques": null,
+      "name": "Web3Jobs",
+      "numFollowers": 1,
+      "productId": "web-3-0-jobs",
+      "publishedTimestamp": 1634234185334,
+      "revenue": 0,
+      "startDateStr": "2021-10",
+      "tagline": "#1 Source for Web3Jobs ⚠ COMING SOON! ⚠",
+      "twitterHandle": "web3jobs_",
+      "updatedTimestamp": 1635655877743,
+      "userIds": ["Yv2VnD9dJoXvuoLRVDhAXZZnyYu2", "dz7tmfVlXGT16MK1hZCls8zvSu33"],
+      "websiteUrl": "https://web3jobs.biz",
+      "objectID": "web-3-0-jobs",
+      "_highlightResult": {
+        "description": {
+          "value": "It exists because there are a lot of niche job boards, and I see the potential in a Web 3.0 programming board",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Web3Jobs",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "#1 Source for Web3Jobs ⚠ COMING SOON! ⚠",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "web3jobs_",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://web3jobs.biz",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-0", "founder-multi", "founders-code-yes", "funding-self", "platform-web", "revenue-model-subscription", "revenue-model-transactional", "vertical-ai", "vertical-b2b", "vertical-bots", "stripe-verified-revenue"],
+      "approvedTimestamp": 1617091785238,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/poi-data/Uryag5XDLUVQlBijkoszW0gW1NO2",
+      "bumpedTimestamp": 1635640646199,
+      "city": "Ottawa",
+      "country": "Canada",
+      "createdTimestamp": 1617062095100,
+      "description": "Looking for up to date point of interest data I found existing ones severely lacking - especially as pandemic forced closures have rendered many business poi data obsolete. I set out to solve this problem.",
+      "last30DaysUniques": null,
+      "name": "Poi Data",
+      "numFollowers": 4,
+      "productId": "poi-data",
+      "publishedTimestamp": 1617062094181,
+      "region": "Ontario",
+      "revenue": 14400,
+      "startDateStr": "2021-01",
+      "tagline": "Point of Interest Data",
+      "updatedTimestamp": 1635640646467,
+      "userIds": ["Uryag5XDLUVQlBijkoszW0gW1NO2"],
+      "websiteUrl": "https://poidata.xyz",
+      "objectID": "poi-data",
+      "_highlightResult": {
+        "city": {
+          "value": "Ottawa",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "Canada",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "Looking for up to date point of interest data I found existing ones severely lacking - especially as pandemic forced closures have rendered many business poi data obsolete. I set out to solve this problem.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Poi Data",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "Ontario",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Point of Interest Data",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://poidata.xyz",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-under-10", "founders-code-yes", "founders-solo", "funding-self", "platform-web", "revenue-model-free", "vertical-content", "vertical-growth", "vertical-saas", "stripe-verified-revenue"],
+      "approvedTimestamp": 1613981501942,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/twayo-biz/Ut8WTQm0JNUvDLKWK3UtxQkmcKH2",
+      "bumpedTimestamp": 1635637646297,
+      "createdTimestamp": 1613933009613,
+      "description": "I'm working on Twayobiz so you no longer have to worry about losing business files such as logos, documents, or anything else.",
+      "facebookUrl": "https://facebook.com/twayobiz",
+      "last30DaysUniques": null,
+      "name": "Twayobiz",
+      "numFollowers": 1,
+      "productId": "twayo-biz",
+      "publishedTimestamp": 1613933006967,
+      "revenue": 0,
+      "startDateStr": "2020-02",
+      "tagline": "File storage for business",
+      "updatedTimestamp": 1635637646637,
+      "userIds": ["Ut8WTQm0JNUvDLKWK3UtxQkmcKH2"],
+      "websiteUrl": "https://twayobiz.com",
+      "objectID": "twayo-biz",
+      "_highlightResult": {
+        "description": {
+          "value": "I'm working on Twayobiz so you no longer have to worry about losing business files such as logos, documents, or anything else.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Twayobiz",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "File storage for business",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://twayobiz.com",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-0", "founders-code-yes", "founders-solo", "funding-bootstrapped", "funding-self", "platform-mobile", "platform-web", "revenue-model-commission", "revenue-model-free", "revenue-model-partnerships", "revenue-model-subscription", "vertical-b2c", "vertical-finance", "vertical-health-fitness", "vertical-saas"],
+      "approvedTimestamp": 1575792338090,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/legup-health-for-now/As8MTI7ZSMWNXoJLsj2jmGcyAgd2",
+      "bumpedTimestamp": 1635626629413,
+      "city": "Salt Lake City",
+      "country": "United States of America",
+      "createdTimestamp": 1575753199092,
+      "description": "More and more Utah workers are buying their own health insurance. It's time they got the service and support they're already paying for. LegUp Health helps these Utahns find, use, and manage their coverage.",
+      "facebookUrl": "https://www.facebook.com/leguphealth",
+      "last30DaysUniques": null,
+      "name": "LegUp Health",
+      "numFollowers": 3,
+      "productId": "legup-health-for-now",
+      "publishedTimestamp": 1575753198037,
+      "region": "Utah",
+      "revenue": 2000,
+      "startDateStr": "2020-02",
+      "tagline": "For Utahns who buy their own health insurance",
+      "twitterHandle": "leguphealth",
+      "updatedTimestamp": 1635626631531,
+      "userIds": ["As8MTI7ZSMWNXoJLsj2jmGcyAgd2"],
+      "websiteUrl": "https://www.leguphealth.com",
+      "objectID": "legup-health-for-now",
+      "_highlightResult": {
+        "city": {
+          "value": "Salt Lake City",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "United States of America",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "More and more Utah workers are buying their own health insurance. It's time they got the service and support they're already paying for. LegUp Health helps these Utahns find, use, and manage their coverage.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "LegUp Health",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "Utah",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "For Utahns who buy their own health insurance",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "leguphealth",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://www.leguphealth.com",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-0", "founders-code-yes", "founders-solo", "funding-bootstrapped", "funding-self", "platform-browser", "platform-web", "revenue-model-free", "revenue-model-subscription", "vertical-communication", "vertical-email-marketing", "vertical-productivity"],
+      "approvedTimestamp": 1623744400324,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/inboxes-app/Od589cKWD5YwjltG2dwbXQCozRH3",
+      "bumpedTimestamp": 1635611192411,
+      "city": "London",
+      "country": "United Kingdom",
+      "createdTimestamp": 1623671590252,
+      "description": "I made Inboxes.App because it's something I've wanted for myself for a long time. I'm tired of always gettng countless marketing/spam messages, so I made an extension where you can delete an address once you're done.",
+      "last30DaysUniques": null,
+      "name": "Inboxes app",
+      "numFollowers": 4,
+      "productId": "inboxes-app",
+      "publishedTimestamp": 1623671588700,
+      "region": "England",
+      "revenue": 0,
+      "startDateStr": "2021-04",
+      "tagline": "Temporary disposable email addresses",
+      "twitterHandle": "PatrickSocha",
+      "updatedTimestamp": 1635611193148,
+      "userIds": ["Od589cKWD5YwjltG2dwbXQCozRH3"],
+      "websiteUrl": "https://inboxes.app",
+      "objectID": "inboxes-app",
+      "_highlightResult": {
+        "city": {
+          "value": "London",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "United Kingdom",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "I made Inboxes.App because it's something I've wanted for myself for a long time. I'm tired of always gettng countless marketing/spam messages, so I made an extension where you can delete an address once you're done.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Inboxes app",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "England",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Temporary disposable email addresses",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "PatrickSocha",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://inboxes.app",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-full-time", "employees-10-plus", "founder-multi", "founders-code-no", "funding-seed", "platform-web", "revenue-model-free", "vertical-ai", "vertical-calendar", "vertical-productivity", "vertical-saas"],
+      "approvedTimestamp": 1628755682301,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/airgram/21rF1yD8XHdDy1DA5JlFRqElcx33",
+      "bumpedTimestamp": 1635602276390,
+      "createdTimestamp": 1628738872861,
+      "description": "We frustrated with meetings everyday. We have transcribing and translation ability, so we want to built Airgram to help people in their daily meeting. Preparing, time  management, recording and transcribe their meeting.",
+      "last30DaysUniques": null,
+      "name": "Airgram",
+      "numFollowers": 2,
+      "productId": "airgram",
+      "publishedTimestamp": 1628738864794,
+      "revenue": 0,
+      "startDateStr": "2020-08",
+      "tagline": "Recording, transcript, notes for zoom & google meet.",
+      "twitterHandle": "AirgramIO",
+      "updatedTimestamp": 1635602277587,
+      "userIds": ["21rF1yD8XHdDy1DA5JlFRqElcx33"],
+      "websiteUrl": "https://www.airgram.io",
+      "objectID": "airgram",
+      "_highlightResult": {
+        "description": {
+          "value": "We frustrated with meetings everyday. We have transcribing and translation ability, so we want to built Airgram to help people in their daily meeting. Preparing, time  management, recording and transcribe their meeting.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Airgram",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Recording, transcript, notes for zoom & google meet.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "AirgramIO",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://www.airgram.io",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-under-10", "founder-multi", "founders-code-yes", "funding-self", "platform-web", "revenue-model-subscription", "vertical-community", "vertical-content", "vertical-writing", "stripe-verified-revenue"],
+      "approvedTimestamp": 1611043731362,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/brick/Lv9DXscxKKRdBk0RuMdjmO1EHjv1",
+      "bumpedTimestamp": 1635601957351,
+      "createdTimestamp": 1610873506748,
+      "description": "When I started Brick, I didn't know any platforms where I could make a site with a single click.\n\nIt turned out to be a *big* deal. Nowadays, I write much more than I ever did, and this is all thanks to Brick.",
+      "last30DaysUniques": null,
+      "name": "Brick",
+      "numFollowers": 12,
+      "productId": "brick",
+      "publishedTimestamp": 1610873505585,
+      "revenue": 15,
+      "startDateStr": "2019-12",
+      "tagline": "The easiest way to publish your writing",
+      "twitterHandle": "TryBrick",
+      "updatedTimestamp": 1635601959156,
+      "userIds": ["Lv9DXscxKKRdBk0RuMdjmO1EHjv1"],
+      "websiteUrl": "https://brick.do",
+      "objectID": "brick",
+      "_highlightResult": {
+        "description": {
+          "value": "When I started Brick, I didn't know any platforms where I could make a site with a single click.\n\nIt turned out to be a *big* deal. Nowadays, I write much more than I ever did, and this is all thanks to Brick.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Brick",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "The easiest way to publish your writing",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "TryBrick",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://brick.do",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-0", "founders-code-yes", "founders-solo", "funding-bootstrapped", "platform-web", "revenue-model-free", "revenue-model-subscription", "vertical-saas", "vertical-sales", "vertical-shopping"],
+      "approvedTimestamp": 1627200471941,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/searchmonitor/A54RTVL7oIephEVwSFBSWv28Bpo2",
+      "bumpedTimestamp": 1635560768192,
+      "createdTimestamp": 1627138157191,
+      "description": "There was no direct way for Shopify shopkeepers to know what their customers search for without jumping through hoops. So, I decided to build one.",
+      "last30DaysUniques": null,
+      "name": "Searchmonitor",
+      "numFollowers": 1,
+      "productId": "searchmonitor",
+      "publishedTimestamp": 1627138153949,
+      "revenue": 0,
+      "startDateStr": "2021-07",
+      "tagline": "Shopify app that helps shop owners know what users search",
+      "updatedTimestamp": 1635560770756,
+      "userIds": ["A54RTVL7oIephEVwSFBSWv28Bpo2"],
+      "websiteUrl": "https://apps.shopify.com/searchmonitor",
+      "objectID": "searchmonitor",
+      "_highlightResult": {
+        "description": {
+          "value": "There was no direct way for Shopify shopkeepers to know what their customers search for without jumping through hoops. So, I decided to build one.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Searchmonitor",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Shopify app that helps shop owners know what users search",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://apps.shopify.com/searchmonitor",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-full-time", "employees-under-10", "founder-multi", "founders-code-yes", "funding-bootstrapped", "platform-android", "platform-ios", "platform-web", "revenue-model-subscription", "vertical-apis", "vertical-b2b", "vertical-b2c", "vertical-marketing", "vertical-social-media"],
+      "approvedTimestamp": 1604650091025,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/ayrshare/CwjWXg3pv8N3WXmjsPZmoOhkA773",
+      "bumpedTimestamp": 1635553804187,
+      "city": "New York",
+      "country": "United States of America",
+      "createdTimestamp": 1604580112599,
+      "description": "We are an API-first product that enables companies to programmatically automate their social media posts. Companies can skip the social network approval processes and build time to be posting within minutes.",
+      "facebookUrl": "https://www.facebook.com/Ayrshare/",
+      "last30DaysUniques": null,
+      "name": "Ayrshare",
+      "numFollowers": 12,
+      "productId": "ayrshare",
+      "publishedTimestamp": 1604580111874,
+      "region": "New York",
+      "revenue": 0,
+      "startDateStr": "2020-07",
+      "tagline": "Post to all your social media networks via an API",
+      "twitterHandle": "ayrshare",
+      "updatedTimestamp": 1635553804491,
+      "userIds": ["CwjWXg3pv8N3WXmjsPZmoOhkA773"],
+      "websiteUrl": "https://www.ayrshare.com",
+      "objectID": "ayrshare",
+      "_highlightResult": {
+        "city": {
+          "value": "New York",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "United States of America",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "We are an API-first product that enables companies to programmatically automate their social media posts. Companies can skip the social network approval processes and build time to be posting within minutes.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Ayrshare",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "New York",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Post to all your social media networks via an API",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "ayrshare",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://www.ayrshare.com",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-under-10", "founder-multi", "founders-code-yes", "funding-bootstrapped", "funding-self", "platform-desktop", "platform-ios", "platform-mac", "platform-pc", "platform-web", "revenue-model-subscription", "vertical-analytics", "vertical-bots", "vertical-communication", "vertical-community", "vertical-productivity", "vertical-programming", "vertical-task-management", "stripe-verified-revenue"],
+      "approvedTimestamp": 1542960355328,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/karmabot/jMVb8SthfMRy0dt439f0O8h20pE3",
+      "bumpedTimestamp": 1635550012605,
+      "city": "Auckland",
+      "country": "New Zealand",
+      "createdTimestamp": 1542933864207,
+      "description": "Convert good karma to real-life perks. Free peer recognition and engagement system: praise, automated rewards, surveys, watercooler chats and reports.",
+      "last30DaysUniques": null,
+      "name": "Karma",
+      "numFollowers": 204,
+      "productId": "karmabot",
+      "publishedTimestamp": 1543180054128,
+      "region": "Auckland",
+      "revenue": 24877,
+      "startDateStr": "2016-11",
+      "tagline": "WFH sorted: praise, rewards, surveys and watercooler chats",
+      "twitterHandle": "karmabot_chat",
+      "updatedTimestamp": 1635550014467,
+      "userIds": ["jMVb8SthfMRy0dt439f0O8h20pE3"],
+      "websiteUrl": "https://karmabot.chat",
+      "objectID": "karmabot",
+      "_highlightResult": {
+        "city": {
+          "value": "Auckland",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "New Zealand",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "Convert good karma to real-life perks. Free peer recognition and engagement system: praise, automated rewards, surveys, watercooler chats and reports.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Karma",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "Auckland",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "WFH sorted: praise, rewards, surveys and watercooler chats",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "karmabot_chat",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://karmabot.chat",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-0", "founder-multi", "founders-code-no", "funding-self", "platform-desktop", "platform-mobile", "revenue-model-commission", "vertical-ai", "vertical-shopping"],
+      "approvedTimestamp": 1635581162995,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/outdone/hmnKBkxOvteKBSgcD8C1VrhofMk2",
+      "bumpedTimestamp": 1635546077935,
+      "city": "Boston",
+      "country": "United States of America",
+      "createdTimestamp": 1635546077694,
+      "description": "Outdone aims to take the stress out gift shopping. Through the power of machine learning, Outdone allows users to find great gifts for anyone — just by answering a few simple questions.",
+      "facebookUrl": "https://www.facebook.com/outdone.io",
+      "last30DaysUniques": null,
+      "name": "Outdone",
+      "numFollowers": 1,
+      "productId": "outdone",
+      "publishedTimestamp": 1635546076784,
+      "region": "Massachusetts",
+      "revenue": 0,
+      "startDateStr": "2020-03",
+      "tagline": "The Ai-powered gift recommender",
+      "twitterHandle": "OutdoneGifts",
+      "updatedTimestamp": 1635556683937,
+      "userIds": ["hmnKBkxOvteKBSgcD8C1VrhofMk2"],
+      "websiteUrl": "https://app.outdone.io",
+      "objectID": "outdone",
+      "_highlightResult": {
+        "city": {
+          "value": "Boston",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "United States of America",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "Outdone aims to take the stress out gift shopping. Through the power of machine learning, Outdone allows users to find great gifts for anyone — just by answering a few simple questions.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Outdone",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "Massachusetts",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "The Ai-powered gift recommender",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "OutdoneGifts",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://app.outdone.io",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-under-10", "founder-multi", "founders-code-yes", "funding-bootstrapped", "platform-web", "revenue-model-subscription", "vertical-analytics", "vertical-b2c", "vertical-e-commerce", "vertical-growth", "vertical-marketing", "vertical-saas", "vertical-sales"],
+      "approvedTimestamp": 1635581162999,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/sekker/H3w9vAO4mMbCnw2gYdNQ0ZwaPm72",
+      "bumpedTimestamp": 1635545007051,
+      "city": "Tel Aviv",
+      "country": "Israel",
+      "createdTimestamp": 1635543495504,
+      "description": "Sekker exists to help businesses understand their customers better with smart customer experience surveys.",
+      "facebookUrl": "https://www.facebook.com/Sekker-101580265654348",
+      "last30DaysUniques": null,
+      "name": "Sekker",
+      "numFollowers": 1,
+      "productId": "sekker",
+      "publishedTimestamp": 1635543493608,
+      "region": "מחוז תל אביב",
+      "revenue": 0,
+      "startDateStr": "2021-09",
+      "tagline": "Customer Experience Surveys",
+      "updatedTimestamp": 1635545224355,
+      "userIds": ["H3w9vAO4mMbCnw2gYdNQ0ZwaPm72", "y9YSeveB1HYuP0XKB3DqVnkytK52"],
+      "websiteUrl": "https://sekker.io",
+      "objectID": "sekker",
+      "_highlightResult": {
+        "city": {
+          "value": "Tel Aviv",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "Israel",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "Sekker exists to help businesses understand their customers better with smart customer experience surveys.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Sekker",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "מחוז תל אביב",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Customer Experience Surveys",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://sekker.io",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-0", "founders-code-yes", "founders-solo", "funding-bootstrapped", "revenue-model-subscription", "vertical-saas"],
+      "approvedTimestamp": 1596614759264,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/flxs/3zMTCxcoKyMwb06J0kgnxRhhKEq2",
+      "bumpedTimestamp": 1635540257254,
+      "createdTimestamp": 1596542102980,
+      "description": "Every time I read about another massive data breach, I wonder how we got to this point of paying for software with our personal profiles and by giving up our privacy. I've decided its time for a change.",
+      "last30DaysUniques": null,
+      "name": "FLXS",
+      "numFollowers": 2,
+      "productId": "flxs",
+      "publishedTimestamp": 1596542102124,
+      "revenue": 0,
+      "startDateStr": "2019-04",
+      "tagline": "Privacy-first SaaS and other software",
+      "twitterHandle": "flxsuk",
+      "updatedTimestamp": 1635540258109,
+      "userIds": ["3zMTCxcoKyMwb06J0kgnxRhhKEq2"],
+      "websiteUrl": "https://www.flxs.co.uk",
+      "objectID": "flxs",
+      "_highlightResult": {
+        "description": {
+          "value": "Every time I read about another massive data breach, I wonder how we got to this point of paying for software with our personal profiles and by giving up our privacy. I've decided its time for a change.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "FLXS",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Privacy-first SaaS and other software",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "flxsuk",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://www.flxs.co.uk",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-under-10", "founders-code-yes", "founders-solo", "funding-self", "platform-ios", "platform-pc", "revenue-model-transactional", "vertical-games"],
+      "approvedTimestamp": 1605600398078,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/outer-space-shack/YnthUqnD9lPVe9PUOuX70okfG7H2",
+      "bumpedTimestamp": 1635540158037,
+      "city": "Aix-en-Provence",
+      "country": "France",
+      "createdTimestamp": 1605594546103,
+      "description": "I am fascinated by the space settlement we will start in the next years, and I absolutely want to be able to play it in a video game with current technology. ",
+      "last30DaysUniques": null,
+      "name": "Outer Space Shack",
+      "numFollowers": 1,
+      "productId": "outer-space-shack",
+      "publishedTimestamp": 1605594543000,
+      "region": "Provence-Alpes-Côte d'Azur",
+      "revenue": 0,
+      "startDateStr": "2020-11",
+      "tagline": "Realistic space outpost management game",
+      "updatedTimestamp": 1635540161345,
+      "userIds": ["YnthUqnD9lPVe9PUOuX70okfG7H2"],
+      "websiteUrl": "https://outerspaceshack.com/",
+      "objectID": "outer-space-shack",
+      "_highlightResult": {
+        "city": {
+          "value": "Aix-en-Provence",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "France",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "I am fascinated by the space settlement we will start in the next years, and I absolutely want to be able to play it in a video game with current technology. ",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Outer Space Shack",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "Provence-Alpes-Côte d'Azur",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Realistic space outpost management game",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://outerspaceshack.com/",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-0", "founders-code-yes", "founders-solo", "funding-bootstrapped", "funding-self", "platform-web", "revenue-model-commission", "revenue-model-subscription", "vertical-apis", "vertical-b2b", "vertical-community", "vertical-saas"],
+      "approvedTimestamp": 1635581162991,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/local-store-xyz/HG8lFHKrhHentvymoFQk53kJZIQ2",
+      "bumpedTimestamp": 1635535330931,
+      "city": "New York",
+      "country": "United States of America",
+      "createdTimestamp": 1635535330726,
+      "description": "Owning and operating a local store is hard. The regulatory landscape is changing constantly and compliance can suck out all the fun from small business. I am creating a community for local stores and automated tools.",
+      "last30DaysUniques": null,
+      "name": "Local Stores XYZ",
+      "numFollowers": 1,
+      "productId": "local-store-xyz",
+      "publishedTimestamp": 1635535329706,
+      "region": "New York",
+      "revenue": 0,
+      "startDateStr": "2021-10",
+      "tagline": "Making lives easier for local stores to navigate regulations",
+      "updatedTimestamp": 1635610756700,
+      "userIds": ["HG8lFHKrhHentvymoFQk53kJZIQ2"],
+      "websiteUrl": "https://localstores.xyz",
+      "objectID": "local-store-xyz",
+      "_highlightResult": {
+        "city": {
+          "value": "New York",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "United States of America",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "Owning and operating a local store is hard. The regulatory landscape is changing constantly and compliance can suck out all the fun from small business. I am creating a community for local stores and automated tools.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Local Stores XYZ",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "New York",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Making lives easier for local stores to navigate regulations",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://localstores.xyz",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }, {
+      "_tags": ["commitment-side-project", "employees-0", "founders-code-yes", "founders-solo", "funding-self", "platform-web", "revenue-model-free", "revenue-model-subscription", "vertical-b2b", "vertical-marketing", "vertical-programming"],
+      "approvedTimestamp": 1618992536154,
+      "avatarUrl": "https://storage.googleapis.com/indie-hackers.appspot.com/product-avatars/waterfaller/82a3KDfxUadFZ98kfH4BxAu7Scw1",
+      "bumpedTimestamp": 1635533655367,
+      "city": "Stillwater",
+      "country": "United States of America",
+      "createdTimestamp": 1617385811656,
+      "description": "Most performance tools and page speed experts re-purpose PageSpeed Insights reports, but Waterfaller takes this same information, adds opinion and expertise, and delivers your next best fix to core web vitals.",
+      "last30DaysUniques": null,
+      "name": "Waterfaller",
+      "numFollowers": 1,
+      "productId": "waterfaller",
+      "publishedTimestamp": 1617385810959,
+      "region": "Minnesota",
+      "revenue": 0,
+      "startDateStr": "2020-05",
+      "tagline": "Find and fix all the slowdowns on your web page",
+      "twitterHandle": "timbednar",
+      "updatedTimestamp": 1635533655700,
+      "userIds": ["82a3KDfxUadFZ98kfH4BxAu7Scw1"],
+      "websiteUrl": "https://waterfaller.dev",
+      "objectID": "waterfaller",
+      "_highlightResult": {
+        "city": {
+          "value": "Stillwater",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "country": {
+          "value": "United States of America",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "description": {
+          "value": "Most performance tools and page speed experts re-purpose PageSpeed Insights reports, but Waterfaller takes this same information, adds opinion and expertise, and delivers your next best fix to core web vitals.",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "name": {
+          "value": "Waterfaller",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "region": {
+          "value": "Minnesota",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "tagline": {
+          "value": "Find and fix all the slowdowns on your web page",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "twitterHandle": {
+          "value": "timbednar",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "websiteUrl": {
+          "value": "https://waterfaller.dev",
+          "matchLevel": "none",
+          "matchedWords": []
+        }
+      }
+    }],
+    "nbHits": 15221,
+    "page": 0,
+    "nbPages": 63,
+    "hitsPerPage": 16,
+    "exhaustiveNbHits": true,
+    "exhaustiveTypo": true,
+    "query": "",
+    "params": "query=&hitsPerPage=16&page=0&restrictSearchableAttributes=&facets=%5B%5D&tagFilters=",
+    "index": "products",
+    "processingTimeMS": 1
+  }]
+}
