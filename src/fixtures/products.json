@@ -1,97 +1,97 @@
 [{
-  "id": "/product/poi-data",
+  "id": "poi-data",
   "name": "PoiData",
-  "tagline": "PointofInterestData",
+  "tagline": "Point of Interest Data",
   "revenueNumber": 14400,
   "revenueExplanation": "stripe-verified"
 }, {
-  "id": "/product/twayo-biz",
+  "id": "twayo-biz",
   "name": "Twayobiz",
-  "tagline": "Filestorageforbusiness",
+  "tagline": "File storage for business",
   "revenueNumber": 0,
   "revenueExplanation": "stripe-verified"
 }, {
-  "id": "/product/legup-health-for-now",
+  "id": "legup-health-for-now",
   "name": "LegUpHealth",
-  "tagline": "ForUtahnswhobuytheirownhealthinsurance",
+  "tagline": "For Utahns who buy their own health insurance",
   "revenueNumber": 2000,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/inboxes-app",
+  "id": "inboxes-app",
   "name": "Inboxesapp",
-  "tagline": "Temporarydisposableemailaddresses",
+  "tagline": "Temporary disposable email addresses",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/airgram",
+  "id": "airgram",
   "name": "Airgram",
-  "tagline": "Recording,transcript,notesforzoom&googlemeet.",
+  "tagline": "Recording, transcript, notes for zoom & google meet.",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/brick",
+  "id": "brick",
   "name": "Brick",
-  "tagline": "Theeasiestwaytopublishyourwriting",
+  "tagline": "The easiest way to publish your writing",
   "revenueNumber": 15,
   "revenueExplanation": "stripe-verified"
 }, {
-  "id": "/product/searchmonitor",
+  "id": "searchmonitor",
   "name": "Searchmonitor",
-  "tagline": "Shopifyappthathelpsshopownersknowwhatuserssearch",
+  "tagline": "Shopify app that helps shop owners know what users search",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/ayrshare",
+  "id": "ayrshare",
   "name": "Ayrshare",
-  "tagline": "PosttoallyoursocialmedianetworksviaanAPI",
+  "tagline": "Post to all your social media networks via an API",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/karmabot",
+  "id": "karmabot",
   "name": "Karma",
-  "tagline": "WFHsorted:praise,rewards,surveysandwatercoolerchats",
+  "tagline": "WFH sorted: praise, rewards, surveys and watercooler chats",
   "revenueNumber": 24877,
   "revenueExplanation": "stripe-verified"
 }, {
-  "id": "/product/outdone",
+  "id": "outdone",
   "name": "Outdone",
-  "tagline": "TheAi-poweredgiftrecommender",
+  "tagline": "The Ai-powered gift recommender",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/sekker",
+  "id": "sekker",
   "name": "Sekker",
-  "tagline": "CustomerExperienceSurveys",
+  "tagline": "Customer Experience Surveys",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/flxs",
+  "id": "flxs",
   "name": "FLXS",
-  "tagline": "Privacy-firstSaaSandothersoftware",
+  "tagline": "Privacy-first SaaS and other software",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/outer-space-shack",
+  "id": "outer-space-shack",
   "name": "OuterSpaceShack",
-  "tagline": "Realisticspaceoutpostmanagementgame",
+  "tagline": "Realistic space outpost management game",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/local-store-xyz",
+  "id": "local-store-xyz",
   "name": "LocalStoresXYZ",
-  "tagline": "Makingliveseasierforlocalstorestonavigateregulations",
+  "tagline": "Making lives easier for local stores to navigate regulations",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/waterfaller",
+  "id": "waterfaller",
   "name": "Waterfaller",
-  "tagline": "Findandfixalltheslowdownsonyourwebpage",
+  "tagline": "Find and fix all the slowdowns on your web page",
   "revenueNumber": 0,
   "revenueExplanation": "self-reported"
 }, {
-  "id": "/product/instatus",
+  "id": "instatus",
   "name": "Instatus",
-  "tagline": "Quick&beautifulstatuspages",
+  "tagline": "Quick & beautiful status pages",
   "revenueNumber": 3003,
   "revenueExplanation": "self-reported"
 }]
