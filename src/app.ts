@@ -6,7 +6,6 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import errorMiddleware from '@middlewares/error.middleware';
 import express from 'express';
-import fs from 'fs';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
@@ -16,8 +15,6 @@ import { connect, set } from 'mongoose';
 import { dbConnection } from '@databases';
 import { logger, stream } from '@utils/logger';
 import { Routes } from '@interfaces/routes.interface';
-import path from 'path';
-import { ParserUtil } from './utils/parser.util';
 
 class App {
   public app: express.Application;
@@ -92,19 +89,6 @@ class App {
 
   private initializeErrorHandling() {
     this.app.use(errorMiddleware);
-  }
-
-  public saveData(rawData: any[]) {
-    fs.writeFileSync(path.join(__dirname, 'fixtures/raw-products.json'), JSON.stringify(rawData));
-
-    const { errors, products } = ParserUtil.parseProducts(rawData);
-    if (errors.length > 0) {
-      const mergedError = errors.join('\n');
-      logger.error(`Failed to parse ${errors.length} products.`, mergedError);
-    }
-    logger.info(`👐 Saved ${products.length}/${rawData.length} scraped products`);
-
-    fs.writeFileSync(path.join(__dirname, 'fixtures/products.json'), JSON.stringify(products));
   }
 }
 

@@ -1,3 +1,7 @@
+import fs from 'fs';
+import path from 'path';
+import { logger } from './logger';
+
 /**
  * @method isEmpty
  * @param {String | Number | Object} value
@@ -28,4 +32,18 @@ export const isString = (o: any): o is string => {
 
 export const isNumber = (o: any): o is number => {
   return typeof o === 'number';
+};
+
+export const mergeMessages = (msgs: string[]) => {
+  return msgs.join('\n');
+};
+
+export const saveFixture = (fileName: string, data: any) => {
+  fs.writeFile(path.join(__dirname, 'fixtures', fileName), JSON.stringify(data), err => {
+    if (err) {
+      err instanceof Error && logger.error(`Failed to save fixture ${fileName}:`, err);
+      throw err;
+    }
+    logger.info(`✅ Saved fixture ${fileName}`);
+  });
 };

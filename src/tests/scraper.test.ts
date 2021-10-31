@@ -1,4 +1,3 @@
-import App from '@app';
 import ProductsRoute from '@routes/products.route';
 import Scraper from '@scraper';
 
@@ -7,15 +6,14 @@ afterAll(async () => {
 });
 
 describe('scraper', () => {
-  describe('scraper.init', () => {
-    it('should initialize the Scraper', () => {
+  describe('scraper.run', () => {
+    it('should run the scraper / runScraper', () => {
       const productsRoute = new ProductsRoute();
-      const app = new App([productsRoute]);
-      const scraper = new Scraper(app);
+      const scraper = new Scraper();
 
       expect(() => {
         scraper
-          .init()
+          .run()
           .then(() => {
             expect(productsRoute.productsController.productService.products).toHaveLength(16);
           })

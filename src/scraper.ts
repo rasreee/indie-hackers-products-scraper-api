@@ -1,12 +1,13 @@
-import App from './app';
 import puppeteer from 'puppeteer';
+import { ParserUtil } from '@utils/parser.util';
+import { logger } from '@utils/logger';
+import { mergeMessages, saveFixture } from '@utils/util';
 
 const productsUrl = 'https://indiehackers.com/products';
 
 /**
  * Grabs required data from the HTML
  * TODO have a cron job update this data
- * TODO either the
  */
 const scrapeProductsData = async () => {
   try {
@@ -52,12 +53,16 @@ const scrapeProductsData = async () => {
 };
 
 class Scraper {
-  constructor(private app: App) {}
-
-  init = async () => {
+  run = async () => {
     const rawData = await scrapeProductsData();
 
-    this.app.saveData(rawData);
+    const { errors, products } = ParserUtil.parseProducts(rawData);
+
+    errors.length && logger.error(`Omitted ${errors.length} items due to parsing errors.\nDetails: `, mergeMessages(errors));
+    logger.info(`Saved ${products.length}/${rawData.length}`, errors);
+
+    saveFixture('raw-products.json', rawData);
+    saveFixture('products.json', products);
   };
 }
 

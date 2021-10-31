@@ -3,8 +3,6 @@ import { Product } from '@interfaces/products.interface';
 import productModel from '@models/products.model';
 
 class ProductService {
-  private apiUrl = `${process.env.SIMPLE_SCRAPER_API_URL}?apiKey=${process.env.SIMPLE_SCRAPER_API_KEY}`;
-
   public products = productModel;
 
   public async getProducts(offset = 0, limit = 10): Promise<Product[]> {
