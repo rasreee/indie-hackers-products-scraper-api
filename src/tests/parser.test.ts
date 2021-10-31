@@ -3,7 +3,7 @@ import { ParserUtil } from '@utils/parser.util';
 
 describe('parser', () => {
   describe('parseId', () => {
-    it('should parse /product/:id correctly / parseId ', () => {
+    it('should parse productID correctly / parseId ', () => {
       const projectId = 'test-parse-id__SUCCESS';
       const mockData = `/product/${projectId}`;
       const result = ParserUtil.parseId(mockData);
