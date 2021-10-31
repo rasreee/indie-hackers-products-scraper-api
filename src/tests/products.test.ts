@@ -49,11 +49,17 @@ describe('Testing Products', () => {
   });
 
   describe('[GET] /products/sync', () => {
-    it('response statusCode 200 / syncAll', () => {
+    it('response statusCode 200 / syncAll', done => {
       const productsRoute = new ProductRoute();
       const app = new App([productsRoute]);
 
-      return request(app.getServer()).get(`${productsRoute.path}/sync`).expect(200);
+      return request(app.getServer())
+        .get(`${productsRoute.path}/sync`)
+        .expect(200)
+        .end((err, res) => {
+          if (err) return done(err);
+          expect(res.body.message).toEqual('syncAll');
+        });
     });
   });
 });
