@@ -10,24 +10,39 @@ afterAll(async () => {
 });
 
 describe('Testing Products', () => {
-  describe('[GET] /products', () => {
-    it('response statusCode 200 / findAll', () => {
-      const findProduct: Product[] = productModel;
+  describe('[GET] /products?', () => {
+    it('responds statusCode 200 / get 10', done => {
       const productsRoute = new ProductRoute();
       const app = new App([productsRoute]);
+      return request(app.getServer())
+        .get(`${productsRoute.path}?offset=${0}&limit=${10}`)
+        .expect(200)
+        .end((err, res) => {
+          if (err) return done(err);
+          expect(res.ok);
+          expect(res.body.message).toEqual('get');
+          expect(res.body.data.length).toBeLessThanOrEqual(10);
+        });
+    });
+  });
 
-      return request(app.getServer()).get(`${productsRoute.path}`).expect(200, { data: findProduct, message: 'findAll' });
+  describe('[GET] /products/all', () => {
+    it('response statusCode 200 / getAll', () => {
+      const getProduct: Product[] = productModel;
+      const productsRoute = new ProductRoute();
+      const app = new App([productsRoute]);
+      return request(app.getServer()).get(`${productsRoute.path}/all`).expect(200, { data: getProduct, message: 'getAll' });
     });
   });
 
   describe('[GET] /products/:id', () => {
-    it('response statusCode 200 / findOne', () => {
+    it('response statusCode 200 / getOne', () => {
       const productId = 'legup-health-for-now';
       const expectedProduct = getProductFixture(productId);
       const productsRoute = new ProductRoute();
       const app = new App([productsRoute]);
       const test = request(app.getServer()).get(`${productsRoute.path}/${productId}`);
-      test.expect(200, { data: expectedProduct, message: 'findOne' });
+      test.expect(200, { data: expectedProduct, message: 'getOne' });
     });
   });
 });

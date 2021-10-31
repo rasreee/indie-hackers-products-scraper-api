@@ -13,6 +13,6 @@ const app = new App([new IndexRoute(), new ProductsRoute()]);
 
 app.listen();
 
-const scraper = new Scraper();
+// const scraper = new Scraper();
 
-scraper.init();
+// scraper.init();

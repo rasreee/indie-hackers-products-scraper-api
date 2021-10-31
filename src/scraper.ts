@@ -1,14 +1,16 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
-import { RevenueExplanation } from './interfaces/products.interface';
+import { Product, RevenueExplanation } from './interfaces/products.interface';
 import path from 'path';
 
 const productsUrl = 'https://indiehackers.com/products';
 
 /**
  * Grabs required data from the HTML
+ * TODO have a cron job update this data
+ * TODO either the
  */
-const getRawProducts = async () => {
+const scrapeProductsData = async () => {
   try {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -17,23 +19,38 @@ const getRawProducts = async () => {
 
     const result = await page.evaluate(() => {
       const linkEls = document.querySelectorAll('a.product-card__link');
-      const productCards: any[] = [];
+      const productCards: Product[] = [];
       for (let i = 0; i < linkEls.length; i++) {
         const node = linkEls[i];
+
         // id
-        const url = node.getAttribute('href');
+        const id = node.getAttribute('href')?.replace('/product/', '');
+
         // header
-        const header = node.querySelector('.product-card__header > div.product-card__header-text');
-        if (!header) throw new Error('header was null');
-        const name = header.children.item(0)?.textContent;
-        const tagline = header.children.item(1)?.textContent;
+        const headerEls = node.querySelector('.product-card__header > div.product-card__header-text')?.children;
+        const name = headerEls?.item(0)?.textContent;
+        const tagline = headerEls?.item(1)?.textContent;
+
         // revenue
         const revenueEls = node.querySelector('.product-card__revenue > div.product-card__revenue-text')?.children;
-        if (!revenueEls) throw new Error('revenueEls was null');
-        const revenueNumber = revenueEls.item(0)?.textContent?.trim();
-        const revenueExplanation = revenueEls.item(1)?.textContent?.trim();
+        const revenueNumberMatch = revenueEls?.item(0)?.textContent?.trim().match(/\d+/);
+        const monthlyRevenue = revenueNumberMatch ? parseInt(revenueNumberMatch[0]) : null;
+        let revenueExplanation = revenueEls
+          ?.item(1)
+          ?.textContent?.trim()
+          ?.replace('revenue', '')
+          .replace(/[\n|\s]+/, '');
+        if (revenueExplanation === '-verified') {
+          revenueExplanation = RevenueExplanation.StripeVerified;
+        }
 
-        productCards[i] = { url, name, tagline, revenueNumber, revenueExplanation };
+        if (!id) throw new Error('Invalid product id');
+        if (!name) throw new Error('Invalid name');
+        if (!tagline) throw new Error('Invalid tagline');
+        if (!monthlyRevenue) throw new Error(`Invalid monthly revenue`);
+        if (!revenueExplanation || revenueExplanation !== RevenueExplanation.SelfReported) throw new Error(`Invalid revenue explanation`);
+
+        productCards[i] = { id, name, tagline, monthlyRevenue, revenueExplanation };
       }
 
       return productCards;
@@ -46,50 +63,14 @@ const getRawProducts = async () => {
   }
 };
 
-interface RawProduct {
-  url: string;
-  name: string;
-  tagline: string;
-  revenueNumber: string;
-  revenueExplanation: string;
-}
-
-const parseRevenueExplanation = (val: string) => {
-  const result = val.replace('revenue', '').replace(/[\n|\s]+/, '');
-  if (result === RevenueExplanation.SelfReported) return RevenueExplanation.SelfReported;
-  else if (result === '-verified') return RevenueExplanation.StripeVerified;
-  else throw new Error(`invalid revenueExplanation ${val}`);
-};
-
-const parseMonthlyRevenue = (val: string) => {
-  const revenue = val.match(/\d+/);
-  if (!revenue) throw new Error(`Invalid revenueNumber arg: ${val}`);
-  const result = parseInt(revenue[0]);
-  if (Number.isInteger(result)) return result;
-  throw new Error(`invalid revenueNumber ${val}`);
-};
-
-const parseProductsData = (rawData: RawProduct[]) => {
-  const products: any[] = rawData.map(data => ({
-    id: data.url.replace('/product/', ''),
-    name: data.name,
-    tagline: data.tagline,
-    revenueExplanation: parseRevenueExplanation(data.revenueExplanation),
-    monthlyRevenue: parseMonthlyRevenue(data.revenueNumber),
-  }));
-  return products;
-};
-
 class Scraper {
   public async init() {
-    const rawProducts = await getRawProducts();
+    const scrapedData = await scrapeProductsData();
 
-    const productsData = parseProductsData(rawProducts);
-
-    fs.writeFile(path.join(__dirname, 'fixtures/products.json'), JSON.stringify(productsData), err => {
+    fs.writeFile(path.join(__dirname, 'fixtures/products.json'), JSON.stringify(scrapedData), err => {
       if (err) throw err;
       console.log('✅ Success!');
-      console.log(productsData);
+      console.log(scrapedData);
     });
   }
 }

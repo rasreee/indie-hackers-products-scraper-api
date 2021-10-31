@@ -1,96 +1,50 @@
 tags:
-- name: users
-  description: users API
+- name: products
+  description: products API
 
 paths:
-# [GET] users
-  /users:
+# [GET] products/all
+  /products/all:
     get:
       tags:
-      - users
-      summary: Find All Users
+      - products
+      summary: Find All Products
       responses:
         200:
           description: 'OK'
         500:
           description: 'Server Error'
-
-# [POST] users
-    post:
-      tags:
-      - users
-      summary: Add User
-      parameters:
-      - name: body
-        in: body
-        description: user Data
-        required: true
-        schema:
-          $ref: '#/definitions/users'
-      responses:
-        201:
-          description: 'Created'
-        400:
-          description: 'Bad Request'
-        409:
-          description: 'Conflict'
-        500:
-          description: 'Server Error'
-
-# [GET] users/id
-  /users/{id}:
+          
+# [GET] products
+  /products:
     get:
       tags:
-      - users
-      summary: Find User By Id
+      - products
+      summary: Get Products
       parameters:
-      - name: id
-        in: path
-        description: User Id
-        required: true
+      - name: limit
+        description: Limit
+        required: false
+      - name: offset
+        description: Offset
+        required: false
       responses:
         200:
           description: 'OK'
-        409:
-          description: 'Conflict'
+        416: 'Range Not Satisfiable'
         500:
           description: 'Server Error'
 
-# [PUT] users/id
-    put:
+# [GET] products/id
+  /products/{id}:
+    get:
       tags:
-      - users
-      summary: Update User By Id
+      - products
+      summary: Find Product By Id
       parameters:
       - name: id
         in: path
-        description: user Id
-        required: true
-      - name: body
-        in: body
-        description: user Data
-        required: true
-        schema:
-          $ref: '#/definitions/users'
-      responses:
-        200:
-          description: 'OK'
-        400:
-          description: 'Bad Request'
-        409:
-          description: 'Conflict'
-        500:
-          description: 'Server Error'
-
-# [DELETE] users/id
-    delete:
-      tags:
-      - users
-      summary: Delete User By Id
-      parameters:
-      - name: id
-        in: path
-        description: user Id
+        description: Product Id
         required: true
       responses:
         200:
@@ -99,23 +53,6 @@ paths:
           description: 'Conflict'
         500:
           description: 'Server Error'
-
-# definitions
-definitions:
-  users:
-    type: object
-    required:
-        - email
-        - password
-    properties:
-      id:
-        description: user Id
-      email:
-        type: string
-        description: user Email
-      password:
-        type: string
-        description: user Password
 
 schemes:
  - https
