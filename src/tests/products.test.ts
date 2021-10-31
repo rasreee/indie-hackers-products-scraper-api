@@ -6,10 +6,12 @@ import ProductRoute from '@routes/products.route';
 import { getProductFixture } from '@fixtures/products.fixture';
 
 afterAll(async () => {
-  await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
+  await new Promise<void>(resolve => setTimeout(() => resolve(), 5000));
 });
 
 describe('Testing Products', () => {
+  jest.setTimeout(30000);
+
   describe('[GET] /products?', () => {
     it('responds statusCode 200 / get 10', done => {
       const productsRoute = new ProductRoute();
@@ -43,6 +45,15 @@ describe('Testing Products', () => {
       const app = new App([productsRoute]);
       const test = request(app.getServer()).get(`${productsRoute.path}/${productId}`);
       test.expect(200, { data: expectedProduct, message: 'getOne' });
+    });
+  });
+
+  describe('[GET] /products/sync', () => {
+    it('response statusCode 200 / syncAll', () => {
+      const productsRoute = new ProductRoute();
+      const app = new App([productsRoute]);
+
+      return request(app.getServer()).get(`${productsRoute.path}/sync`).expect(200);
     });
   });
 });

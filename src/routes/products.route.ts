@@ -15,6 +15,7 @@ class ProductsRoute implements Routes {
     this.router.get(`${this.path}/all`, this.productsController.getAllProducts);
     this.router.get(`${this.path}?`, this.productsController.getProducts);
     this.router.get(`${this.path}/:id(\\d+)`, this.productsController.getProductById);
+    this.router.get(`${this.path}/sync`, this.productsController.syncProducts);
   }
 }
 

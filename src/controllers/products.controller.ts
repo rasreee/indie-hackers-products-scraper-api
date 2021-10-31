@@ -37,6 +37,15 @@ class ProductsController {
       next(error);
     }
   };
+
+  public syncProducts = async (_: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const updatedData = await this.productService.syncProducts();
+      res.status(200).json({ data: updatedData, message: 'syncAll' });
+    } catch (error) {
+      next(error);
+    }
+  };
 }
 
 export default ProductsController;
