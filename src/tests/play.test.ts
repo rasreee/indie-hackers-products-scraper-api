@@ -1,4 +1,4 @@
-import IndieHackersService from '@services/indie-hackers.service';
+import IndieHackersService from '@services/ih-products.service';
 
 afterAll(async () => {
   await new Promise<void>(resolve => setTimeout(() => resolve(), 3000));
@@ -10,7 +10,7 @@ describe('IndieHackersService', () => {
     it('response statusCode 200', async () => {
       const service = new IndieHackersService();
       try {
-        const data = await service.getProducts();
+        const data = await service.getAllProducts();
 
         expect(data).toBeTruthy();
       } catch (err) {

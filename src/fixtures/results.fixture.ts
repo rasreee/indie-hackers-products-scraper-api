@@ -86,7 +86,7 @@ export type GetProductHit = {
   bumpedTimestamp: number;
   createdTimestamp: number;
   description: string;
-  last30DaysUniques: null;
+  last30DaysUniques: null | any;
   name: string;
   numFollowers: number;
   productId: string;
