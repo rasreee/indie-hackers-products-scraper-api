@@ -2,11 +2,12 @@ import ProductsService from '@services/products.service';
 import ScraperService from '@services/scraper.service';
 import { NextFunction, Request, Response } from 'express';
 import { Product } from '@interfaces/products.interface';
+import QueueService from '@services/queue.service';
 
 class ProductsController {
   public productsService: ProductsService;
   constructor(scraperService = new ScraperService()) {
-    this.productsService = new ProductsService(scraperService);
+    this.productsService = new ProductsService(scraperService, new QueueService());
   }
 
   public getProducts = async (req: Request, res: Response, next: NextFunction): Promise<void> => {

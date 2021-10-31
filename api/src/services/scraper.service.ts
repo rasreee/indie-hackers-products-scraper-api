@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { GetProductHit, GetProductsData } from '@interfaces/products.interface';
 import { logger } from '@utils/logger';
-import { DEFAULT_HEADERS, IH_API_URL, PARAMS_TEMPLATE, defaultParser, ParamKeys, IHGetProductsReq } from './constants';
+import { DEFAULT_HEADERS, IH_API_URL, PARAMS_TEMPLATE, ParamKeys, IHGetProductsReq } from './constants';
 
 const DEFAULT_OPTIONS: Dict = { headers: DEFAULT_HEADERS, apiUrl: IH_API_URL, params: PARAMS_TEMPLATE };
 
 type Chunk = GetProductHit[] | Error;
 
-export type GenFuturesResult = {
+export type SyncProductsResult = {
   chunks: Chunk[];
   totalHits: number;
 };
@@ -32,33 +32,29 @@ class ScraperService {
   };
 
   // TODO batch the pages in chunks
-  genFutures = async (): Promise<GenFuturesResult> => {
-    const res = await this.getPage(0).then(async ({ hits, nbPages: totalPages }) => {
-      const chunks: Array<Chunk> = [hits];
+  startSyncProducts = async (onChunk: (chunk: GetProductHit[]) => void, onError: (e: Error) => void): Promise<void> => {
+    const futureChunks: Array<Promise<Chunk>> = [];
 
-      let totalHits = hits.length;
-      let page = 1;
-      while (page < totalPages) {
-        const data = await this.getPage(page)
-          .then(({ hits }) => {
-            totalHits += hits.length;
-            return hits;
-          })
-          .catch(err => {
-            if (err instanceof Error) return err;
-            return new Error('Caught unknown error type');
-          });
+    const firstRes = await this.getPage(0);
 
-        chunks[page] = data;
-        page += 1;
+    const totalHits = firstRes.nbHits;
+    logger.info('# Chunks: ', futureChunks.length);
+    logger.info('# Hits: ', totalHits);
+
+    onChunk(firstRes.hits);
+    let page = 1;
+    while (page < firstRes.nbPages - 1) {
+      try {
+        const nextChunk = await this.getPage(page).then(res => res.hits);
+        onChunk(nextChunk);
+      } catch (err) {
+        err instanceof Error ? onError(err) : onError(new Error('Caught unknown error: ' + JSON.stringify(err)));
       }
-
-      logger.info('# Chunks: ', chunks.length);
-      logger.info('# Hits: ', totalHits);
-      return { chunks, totalHits };
-    });
-
-    return res;
+      page += 1;
+    }
+    logger.info(`=================================`);
+    logger.info('=          🟢 FINISHED          =');
+    logger.info(`=================================`);
   };
 }
 

@@ -1,8 +1,9 @@
 import ScraperService from './scraper.service';
 import { HttpException } from '@exceptions/HttpException';
-import { Product } from '@interfaces/products.interface';
+import { GetProductHit, Product } from '@interfaces/products.interface';
 import { logger } from '@utils/logger';
 import { defaultParser } from './constants';
+import QueueService, { WorkerNames } from './queue.service';
 
 export interface ProductTask {
   type: 'bulkSaveProducts';
@@ -12,7 +13,7 @@ export interface ProductTask {
 class ProductsService {
   private products: Product[] = [];
 
-  constructor(private scraperService: ScraperService) {}
+  constructor(private scraperService: ScraperService, private queueService: QueueService) {}
 
   public async getProducts(offset = 0, limit = 10): Promise<Product[]> {
     if (offset < 0 || offset >= this.products.length - 1) throw new HttpException(416, 'Range Not Satisfiable');
@@ -29,20 +30,27 @@ class ProductsService {
     return found;
   }
 
-  queue: ProductTask[] = [];
+  public parseProducts(hits: GetProductHit[]): Product[] {
+    const parsedProducts = hits.map(data => defaultParser(data));
 
-  private handleError(e: Error): void {
-    logger.error(JSON.stringify(e, null, 2));
+    return parsedProducts;
+  }
+
+  public async bulkSaveProducts(products: Product[]) {
+    logger.info('Called bulkSaveProducts()');
   }
 
   public async syncProducts(): Promise<void> {
-    const { chunks, totalHits } = await this.scraperService.genFutures();
-
-    chunks.map(chunk => {
-      if (chunk instanceof Error) return this.handleError(chunk);
-      const products = chunk.map(data => defaultParser(data));
-      this.queue.push({ type: 'bulkSaveProducts', data: products });
-    });
+    await this.scraperService.startSyncProducts(
+      chunk => {
+        logger.info(`👉 Got chunk with ${chunk.length} items`);
+        const data = this.parseProducts(chunk);
+        this.queueService.push(WorkerNames.BULK_SAVE_PRODUCTS, data);
+      },
+      e => {
+        logger.error(e);
+      },
+    );
   }
 }
 
