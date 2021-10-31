@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from 'axios';
 import { GetProductHit, GetProductsData, Product } from '@interfaces/products.interface';
 import { logger } from '@utils/logger';
@@ -37,8 +38,14 @@ const PARAMS = `query=&hitsPerPage=${ParamKeys.hitsPerPage}&page=${ParamKeys.pag
 
 const ARGS = { headers: HEADERS, apiUrl: API_URL, params: PARAMS };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const defaultParser = ({ _tags: tags, productId: id, startDateStr: startDate, _highlightResult, ...rest }: GetProductHit): Product => {
+const defaultParser = ({
+  _tags: tags,
+  productId: id,
+  startDateStr: startDate,
+  _highlightResult,
+  last30DaysUniques,
+  ...rest
+}: GetProductHit): Product => {
   const product: Product = { id, tags, startDate, ...rest };
 
   return product;

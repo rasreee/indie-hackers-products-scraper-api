@@ -100,7 +100,7 @@ export type GetProductsData = {
   processingTimeMS: number;
 };
 
-export interface Product extends Omit<GetProductHit, '_highlightResult' | '_tags' | 'objectID' | 'productId' | 'startDateStr'> {
+export interface Product extends Omit<GetProductHit, '_highlightResult' | '_tags' | 'objectID' | 'productId' | 'startDateStr' | 'last30DaysUniques'> {
   id: string;
   tags: ProductTag[];
   startDate: string;
