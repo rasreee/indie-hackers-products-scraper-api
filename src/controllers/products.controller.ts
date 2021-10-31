@@ -44,8 +44,9 @@ class ProductsController {
 
   public syncProducts = async (_: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const updatedData = await this.productsService.syncProducts();
-      res.status(200).json({ data: updatedData, message: 'syncAll' });
+      await this.productsService.syncProducts();
+
+      res.status(200).json({ message: 'syncAll' });
     } catch (error) {
       next(error);
     }

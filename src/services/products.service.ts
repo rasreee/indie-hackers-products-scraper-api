@@ -1,7 +1,13 @@
 import ScraperService from './scraper.service';
 import { HttpException } from '@exceptions/HttpException';
 import { Product } from '@interfaces/products.interface';
-import { saveFixture } from '@utils/fixture.util';
+import { logger } from '@utils/logger';
+import { defaultParser } from './constants';
+
+export interface ProductTask {
+  type: 'bulkSaveProducts';
+  data: Product[];
+}
 
 class ProductsService {
   private products: Product[] = [];
@@ -23,14 +29,20 @@ class ProductsService {
     return found;
   }
 
-  public async syncProducts(): Promise<Product[]> {
-    const products = await this.scraperService.getAllProducts();
+  queue: ProductTask[] = [];
 
-    this.products = [...products];
+  private handleError(e: Error): void {
+    logger.error(JSON.stringify(e, null, 2));
+  }
 
-    saveFixture('products.json', products);
+  public async syncProducts(): Promise<void> {
+    const { chunks, totalHits } = await this.scraperService.genFutures();
 
-    return products;
+    chunks.map(chunk => {
+      if (chunk instanceof Error) return this.handleError(chunk);
+      const products = chunk.map(data => defaultParser(data));
+      this.queue.push({ type: 'bulkSaveProducts', data: products });
+    });
   }
 }
 
