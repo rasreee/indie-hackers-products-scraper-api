@@ -7,7 +7,7 @@
   "scripts": {
     "start": "yarn run build && cross-env NODE_ENV=production node dist/server.js",
     "dev": "cross-env NODE_ENV=development nodemon",
-    "build": "tsc && npx tsc-alias",
+    "build": "yarn dlx tsc && yarn dlx tsc-alias",
     "test": "jest --forceExit",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "yarn run lint -- --fix",

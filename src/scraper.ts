@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import { Product, RevenueExplanation } from './interfaces/products.interface';
 import path from 'path';
+import { logger } from './utils/logger';
 
 const productsUrl = 'https://indiehackers.com/products';
 
@@ -19,12 +20,14 @@ const scrapeProductsData = async () => {
 
     const result = await page.evaluate(() => {
       const linkEls = document.querySelectorAll('a.product-card__link');
-      const productCards: Product[] = [];
+
+      const rawData: any[] = [];
+
       for (let i = 0; i < linkEls.length; i++) {
         const node = linkEls[i];
 
         // id
-        const id = node.getAttribute('href')?.replace('/product/', '');
+        const id = node.getAttribute('href');
 
         // header
         const headerEls = node.querySelector('.product-card__header > div.product-card__header-text')?.children;
@@ -33,29 +36,17 @@ const scrapeProductsData = async () => {
 
         // revenue
         const revenueEls = node.querySelector('.product-card__revenue > div.product-card__revenue-text')?.children;
-        const revenueNumberMatch = revenueEls?.item(0)?.textContent?.trim().match(/\d+/);
-        const monthlyRevenue = revenueNumberMatch ? parseInt(revenueNumberMatch[0]) : null;
-        let revenueExplanation = revenueEls
-          ?.item(1)
-          ?.textContent?.trim()
-          ?.replace('revenue', '')
-          .replace(/[\n|\s]+/, '');
-        if (revenueExplanation === '-verified') {
-          revenueExplanation = RevenueExplanation.StripeVerified;
-        }
+        const revenueNumber = revenueEls?.item(0)?.textContent;
+        const revenueExplanation = revenueEls?.item(1)?.textContent;
 
-        if (!id) throw new Error('Invalid product id');
-        if (!name) throw new Error('Invalid name');
-        if (!tagline) throw new Error('Invalid tagline');
-        if (!monthlyRevenue) throw new Error(`Invalid monthly revenue`);
-        if (!revenueExplanation || revenueExplanation !== RevenueExplanation.SelfReported) throw new Error(`Invalid revenue explanation`);
-
-        productCards[i] = { id, name, tagline, monthlyRevenue, revenueExplanation };
+        rawData[i] = { id, name, tagline, revenueNumber, revenueExplanation };
       }
 
-      return productCards;
+      return rawData;
     });
+
     await browser.close();
+
     return result;
   } catch (error) {
     console.error(error);
@@ -64,15 +55,31 @@ const scrapeProductsData = async () => {
 };
 
 class Scraper {
-  public async init() {
-    const scrapedData = await scrapeProductsData();
+  mapRawProductData = (data: { id: any; name: any; tagline: any; revenueNumber: any; revenueExplanation: any }): Product => {
+    const { id, name, tagline, revenueNumber, revenueExplanation } = data;
+    if (typeof id !== 'string') throw new Error('Invalid product id');
+    if (typeof name !== 'string') throw new Error('Invalid name');
+    if (typeof tagline !== 'string') throw new Error('Invalid tagline');
+    if (typeof revenueNumber !== 'string') throw new Error(`Invalid monthly revenue`);
+    if (!(revenueExplanation in RevenueExplanation)) throw new Error(`Invalid revenue explanation`);
 
-    fs.writeFile(path.join(__dirname, 'fixtures/products.json'), JSON.stringify(scrapedData), err => {
+    return { id, name, tagline, monthlyRevenue: parseInt(revenueNumber), revenueExplanation };
+  };
+
+  init = async () => {
+    logger.info('---------------------------------------');
+    logger.info('        👋 Initializing Scraper        ');
+    logger.info('---------------------------------------');
+    const rawData = await scrapeProductsData();
+
+    const productsData = rawData.map(this.mapRawProductData);
+
+    fs.writeFile(path.join(__dirname, 'fixtures/products.json'), JSON.stringify(productsData), err => {
       if (err) throw err;
-      console.log('✅ Success!');
-      console.log(scrapedData);
+      logger.info('✅ Success!');
+      logger.info(productsData);
     });
-  }
+  };
 }
 
 export default Scraper;
